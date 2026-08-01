@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+  --font-sans: var(--font-inter);
+
+  --font-display: var(--font-space);
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+button,
+input,
+textarea,
+select,
+a {
+  font-family: var(--font-inter);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  font-family: var(--font-inter);
+}
+p {
+  font-family: var(--font-inter);
+}
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.marquee-track {
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left 42s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes service-float {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes service-pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(1.45);
+  }
+}
+
+@keyframes service-bars {
+  50% {
+    transform: scaleY(0.62);
+  }
+}
+
+.service-orb {
+  animation: service-float 4s ease-in-out infinite;
+}
+
+.service-pulse {
+  animation: service-pulse 2s ease-in-out infinite;
+}
+
+.service-code-line:nth-child(2) {
+  animation: service-pulse 2.2s ease-in-out infinite;
+}
+
+.service-chart-bar {
+  transform-origin: bottom;
+  animation: service-bars 2.8s ease-in-out infinite;
+}
+
+.service-chart-bar:nth-child(2n) {
+  animation-delay: 0.4s;
+}
+
+@keyframes service-dialog-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes service-dialog-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.service-dialog {
+  animation: service-dialog-in 220ms ease-out both;
+}
+
+.service-dialog-panel {
+  animation: service-dialog-panel-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.service-dialog-orb {
+  animation: service-float 4s ease-in-out infinite;
+}
+.field{
+@apply w-full rounded-xl border border-white/20 bg-white/5 p-4 text-white outline-none;
+}
+
+.field:focus{
+@apply border-[#E63946];
 }
