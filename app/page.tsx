@@ -1,6 +1,5 @@
 import Navbar from "@/componentes/Navbar";
 import Hero from "@/componentes/Hero";
-import TrustBar from "@/componentes/TrustBar";
 import Carrusel from "@/componentes/Carrusel";
 import Tecnologias from "@/componentes/Tecnologias";
 import ServiciosDestacados from "@/componentes/ServiciosDestacados";
@@ -18,7 +17,6 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
-      <TrustBar />
       <Tecnologias />
       <ServiciosDestacados />
       <Carrusel />

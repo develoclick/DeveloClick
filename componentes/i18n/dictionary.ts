@@ -458,28 +458,33 @@ export const dictionary = {
       ],
     },
     testimonios: {
-      eyebrow: "Testimonios",
-      title1: "Lo que dicen",
-      titleHighlight: "nuestros clientes.",
-      paragraph: "Negocios reales que confiaron en nosotros para construir su infraestructura digital.",
-      items: [
-        {
-          quote: "DeveloClick entendió nuestro negocio antes de tocar una línea de código. El resultado fue una plataforma que triplicó nuestras conversiones en tres meses.",
-          name: "María Fernanda Ruiz",
-          role: "CEO, Grupo Alaia",
-        },
-        {
-          quote: "Migramos de una web genérica a un sistema a medida. El soporte post-lanzamiento fue tan sólido como el desarrollo mismo.",
-          name: "Diego Salazar",
-          role: "Fundador, Nortek Logística",
-        },
-        {
-          quote: "El proceso de 6 fases eliminó por completo la incertidumbre. Sabíamos exactamente en qué etapa estábamos en todo momento.",
-          name: "Camila Ibarra",
-          role: "COO, Clínica Bienestar+",
-        },
-      ],
+  eyebrow: "Nuestro compromiso",
+
+  title1: "Lo que puedes esperar",
+
+  titleHighlight: "al trabajar con nosotros.",
+
+  paragraph:
+    "Cada proyecto representa una oportunidad para demostrar nuestro compromiso con la calidad, la innovación y la transparencia. Diseñamos soluciones digitales preparadas para impulsar el crecimiento de tu empresa.",
+
+  items: [
+    {
+      title: "Desarrollo a medida",
+      description:
+        "Analizamos tu negocio antes de escribir una sola línea de código para construir una solución personalizada que responda a tus objetivos y necesidades.",
     },
+    {
+      title: "Comunicación transparente",
+      description:
+        "Mantendrás visibilidad del proyecto en cada etapa mediante una metodología clara, entregas organizadas y seguimiento constante.",
+    },
+    {
+      title: "Calidad para crecer",
+      description:
+        "Aplicamos buenas prácticas de arquitectura, experiencia de usuario y desarrollo para entregar software moderno, seguro y preparado para escalar.",
+    },
+  ],
+},
     trustBar: {
       label: "Empresas que ya escalaron con nosotros",
     },

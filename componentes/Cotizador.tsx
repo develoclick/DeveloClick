@@ -10,6 +10,7 @@ export default function Cotizador() {
   const c = t.cotizador;
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: "",
     objective: "",
@@ -80,9 +81,8 @@ export default function Cotizador() {
               {c.steps.map((s, index) => (
                 <span
                   key={s}
-                  className={`transition-colors duration-300 ${
-                    step === index + 1 ? "text-[#FF2738]" : step > index + 1 ? "text-slate-300" : ""
-                  }`}
+                  className={`transition-colors duration-300 ${step === index + 1 ? "text-[#FF2738]" : step > index + 1 ? "text-slate-300" : ""
+                    }`}
                 >
                   {s}
                 </span>
@@ -193,10 +193,44 @@ export default function Cotizador() {
                     </div>
 
                     <button
-                      onClick={() => setIsSubmitted(true)}
-                      className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FF2738] py-4 text-sm font-bold text-white shadow-lg shadow-[#FF2738]/25 transition-transform hover:scale-[1.01] active:scale-[0.99] mt-6"
+                      disabled={loading}
+                      onClick={async () => {
+                        setLoading(true);
+                        try {
+                          const respuesta = await fetch("https://8x4gau47hh.execute-api.us-east-2.amazonaws.com/default/contacto-api2", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(formData),
+                          });
+
+                          // Leemos la respuesta como texto primero por si el servidor devolvió un error HTML/texto plano
+                          const textoRespuesta = await respuesta.text();
+                          let resultado;
+                          try {
+                            resultado = JSON.parse(textoRespuesta);
+                          } catch {
+                            resultado = { error: textoRespuesta || "Error desconocido del servidor" };
+                          }
+
+                          if (respuesta.ok) {
+                            setIsSubmitted(true);
+                          } else {
+                            // AQUÍ VERÁS EL ERROR REAL QUE ENVÍA AWS O LAMBDA
+                            alert("Error del servidor: " + (resultado.error || JSON.stringify(resultado)));
+                          }
+                        } catch (error) {
+                          console.error("Error de red detallado:", error);
+                          alert("Error de red: No se pudo contactar con AWS. Revisa la consola (F12).");
+                        } finally {
+                          setLoading(false);
+                        }
+                      }}
+                      className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FF2738] py-4 text-sm font-bold text-white shadow-lg shadow-[#FF2738]/25 transition-transform hover:scale-[1.01] active:scale-[0.99] mt-6 disabled:opacity-50"
                     >
-                      <Send size={18} /> {c.submit}
+                      <Send size={18} />
+                      {loading ? "Enviando solicitud..." : c.submit}
                     </button>
                   </div>
                 )}
@@ -283,16 +317,14 @@ function StepLayout({
               key={opt}
               type="button"
               onClick={() => onSelect(opt)}
-              className={`group flex items-center justify-between rounded-2xl border p-5 text-left text-sm font-semibold transition-all duration-300 ${
-                isSelected
-                  ? "border-[#FF2738] bg-[#FF2738]/10 text-white shadow-lg shadow-[#FF2738]/10"
-                  : "border-white/10 bg-white/[0.02] text-slate-300 hover:border-white/25 hover:bg-white/[0.05]"
-              }`}
+              className={`group flex items-center justify-between rounded-2xl border p-5 text-left text-sm font-semibold transition-all duration-300 ${isSelected
+                ? "border-[#FF2738] bg-[#FF2738]/10 text-white shadow-lg shadow-[#FF2738]/10"
+                : "border-white/10 bg-white/[0.02] text-slate-300 hover:border-white/25 hover:bg-white/[0.05]"
+                }`}
             >
               <span className="tracking-tight">{opt}</span>
-              <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors ${
-                isSelected ? "bg-[#FF2738] border-[#FF2738] text-white" : "border-white/30 group-hover:border-white/50"
-              }`}>
+              <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors ${isSelected ? "bg-[#FF2738] border-[#FF2738] text-white" : "border-white/30 group-hover:border-white/50"
+                }`}>
                 {isSelected && <Check size={12} strokeWidth={3} />}
               </div>
             </button>
