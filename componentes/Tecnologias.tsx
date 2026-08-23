@@ -18,13 +18,18 @@ const longTechnologySet = [...technologies, ...technologies];
 
 function TechnologySet({ hidden = false }: { hidden?: boolean }) {
   return (
-    <div className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 bg-[#07182d]" aria-hidden={hidden}>
+    <div
+      className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 bg-[#07182d]"
+      aria-hidden={hidden}
+    >
       {longTechnologySet.map((tech, index) => (
         <div
           key={`${tech.name}-${index}`}
-          className=" group flex items-center gap-3 rounded-xl  px-4 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
+          className=" group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:elev-2"
         >
-          <span className={` flex h-8 min-w-8 items-center justify-center rounded-lg text-xs font-bold text-[#FF2738]`}>
+          <span
+            className={` flex h-8 min-w-8 items-center justify-center rounded-xl text-xs font-bold text-brand-red-400`}
+          >
             {tech.mark}
           </span>
           <span className="whitespace-nowrap text-sm font-bold text-white transition-colors group-hover:text-white sm:text-base">
@@ -40,15 +45,13 @@ export default function Tecnologias() {
   const { t } = useLanguage();
   return (
     <section
-      className="overflow-hidden  bg-[#07182d] py-6"
+      className="overflow-hidden bg-[#07182d] py-6"
       aria-label={t.tecnologias.heading}
     >
       {/* Encabezado sutil */}
-      <div className="mx-auto mb-4 flex max-w-7xl items-center gap-2.5 px-6">
-        <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
-        <p className="text-[11px] font-bold tracking-[0.18em] text-white uppercase">
-          {t.tecnologias.heading}
-        </p>
+      <div className="mx-auto mb-4 flex max-w-7xl items-center gap-2 px-6">
+        <span className="h-2 w-2 rounded-full bg-brand-red-500 animate-pulse" />
+        <p className="type-eyebrow text-white">{t.tecnologias.heading}</p>
       </div>
 
       {/* Marquee de tecnologías */}

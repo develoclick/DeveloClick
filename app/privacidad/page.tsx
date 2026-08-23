@@ -5,7 +5,8 @@ import Footer from "@/componentes/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
-  description: "Cómo DeveloClick recopila, usa y protege tu información personal.",
+  description:
+    "Cómo DeveloClick recopila, usa y protege tu información personal.",
   alternates: { canonical: "/privacidad" },
   robots: { index: false, follow: true },
 };

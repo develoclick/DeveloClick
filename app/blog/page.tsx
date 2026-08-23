@@ -3,11 +3,14 @@ import Navbar from "@/componentes/Navbar";
 import Footer from "@/componentes/Footer";
 import BlogHero from "@/componentes/blog/BlogHero";
 import FeaturedArticles from "@/componentes/blog/FeaturedArticles";
-import BlogExplorer, { type SearchablePost } from "@/componentes/blog/BlogExplorer";
+import BlogExplorer, {
+  type SearchablePost,
+} from "@/componentes/blog/BlogExplorer";
 import ResourcesSection from "@/componentes/blog/ResourcesSection";
 import NewsletterSection from "@/componentes/blog/NewsletterSection";
 import { getAllPosts, getFeaturedPosts } from "@/lib/blog";
 import { categories } from "@/lib/blog-categories";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
     title: "Blog | DeveloClick",
     description:
       "Estrategias, innovación, tecnología y casos de éxito para ayudar a las empresas a crecer mediante soluciones digitales.",
-    url: "https://develoclick.com/blog",
+    url: `${SITE_URL}/blog`,
   },
 };
 
@@ -41,27 +44,32 @@ export default function BlogPage() {
     category: post.category,
     readingTime: post.readingTime,
     tags: post.tags,
-    searchIndex: [post.title, post.description, post.category, ...post.tags].join(" ").toLowerCase(),
+    searchIndex: [post.title, post.description, post.category, ...post.tags]
+      .join(" ")
+      .toLowerCase(),
   }));
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "DeveloClick Blog",
-    url: "https://develoclick.com/blog",
+    url: `${SITE_URL}/blog`,
     description:
       "Estrategias, innovación, tecnología y casos de éxito para ayudar a las empresas a crecer mediante soluciones digitales.",
     blogPost: allPosts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,
-      url: `https://develoclick.com/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       datePublished: post.date,
     })),
   };
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <BlogHero />
 

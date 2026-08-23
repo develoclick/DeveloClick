@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/componentes/Navbar";
 import Hero from "@/componentes/Hero";
 import Carrusel from "@/componentes/Carrusel";
@@ -11,6 +12,12 @@ import Cotizador from "@/componentes/Cotizador";
 import ProyectoCta from "@/componentes/ProyectoCta";
 import Footer from "@/componentes/Footer";
 
+export const metadata: Metadata = {
+  title: "DeveloClick — Desarrollo web, software a medida y plataformas SaaS",
+  description:
+    "Diseñamos y desarrollamos webs, software a medida, dashboards y automatizaciones que convierten visitas en clientes. Cuéntanos tu proyecto y recibe una propuesta en menos de 24 horas.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

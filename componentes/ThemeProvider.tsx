@@ -16,7 +16,10 @@ const STORAGE_KEY = "develoclick-theme";
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";
   const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-  return stored ?? (document.documentElement.classList.contains("dark") ? "dark" : "light");
+  return (
+    stored ??
+    (document.documentElement.classList.contains("dark") ? "dark" : "light")
+  );
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -27,7 +30,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

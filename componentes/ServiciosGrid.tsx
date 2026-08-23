@@ -17,11 +17,19 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
 
-const serviceMeta: { id: "web" | "software" | "saas" | "dashboards" | "marketing" | "automation"; icon: LucideIcon; image: string }[] = [
+const serviceMeta: {
+  id: "web" | "software" | "saas" | "dashboards" | "marketing" | "automation";
+  icon: LucideIcon;
+  image: string;
+}[] = [
   { id: "web", icon: Globe2, image: "/imagenes/diseño.png" },
   { id: "software", icon: Code2, image: "/imagenes/reunion-estrategica.jpg" },
   { id: "saas", icon: Layers3, image: "/imagenes/diseño.png" },
-  { id: "dashboards", icon: LayoutDashboard, image: "/imagenes/reunion-estrategica.jpg" },
+  {
+    id: "dashboards",
+    icon: LayoutDashboard,
+    image: "/imagenes/reunion-estrategica.jpg",
+  },
   { id: "marketing", icon: Megaphone, image: "/imagenes/diseño.png" },
   { id: "automation", icon: Zap, image: "/imagenes/reunion-estrategica.jpg" },
 ];
@@ -29,20 +37,24 @@ const serviceMeta: { id: "web" | "software" | "saas" | "dashboards" | "marketing
 export default function ServiciosGrid() {
   const { t } = useLanguage();
   const services = useMemo(
-    () => serviceMeta.map((meta) => ({ ...meta, ...t.serviciosGrid.services[meta.id] })),
-    [t]
+    () =>
+      serviceMeta.map((meta) => ({
+        ...meta,
+        ...t.serviciosGrid.services[meta.id],
+      })),
+    [t],
   );
   const [activeId, setActiveId] = useState(services[0].id);
 
   const activeService = useMemo(
     () => services.find((s) => s.id === activeId) ?? services[0],
-    [activeId, services]
+    [activeId, services],
   );
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#FFFFFF] dark:bg-[#07182d] py-20 transition-colors duration-300 lg:py-28">
+    <section className="relative w-full overflow-hidden bg-[#FFFFFF] dark:bg-[#07182d] py-24 transition-colors duration-300 lg:py-32">
       {/* Decoración de fondo */}
-      <div className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full bg-[#FF2738]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full bg-brand-red-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 top-40 h-80 w-80 rounded-full bg-[#07182D]/8 blur-3xl" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/80 dark:from-[#07182d]/80 to-transparent" />
 
@@ -55,15 +67,22 @@ export default function ServiciosGrid() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#FF2738]/15 bg-white dark:bg-white/5 px-4 py-2 shadow-sm">
-            <Sparkles size={14} className="text-[#FF2738]" />
-            <span className="text-[11px] font-bold tracking-[0.18em] text-[#FF2738] uppercase">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-red-500/15 bg-white dark:bg-white/5 px-4 py-2 elev-1">
+            <Sparkles
+              size={14}
+              className="text-brand-red-600 dark:text-brand-red-400"
+            />
+            <span className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
               {t.serviciosGrid.badge}
             </span>
           </div>
 
-          <h2 className="mt-5 text-4xl font-display font-bold leading-[1.02] tracking-[-0.05em] text-[#07182D] dark:text-white sm:text-5xl lg:text-6xl">
-            {t.serviciosGrid.title1} <span className="text-[#FF2738]">{t.serviciosGrid.titleHighlight}</span> {t.serviciosGrid.title2}
+          <h2 className="type-h2 mt-5 text-[#07182D] dark:text-white">
+            {t.serviciosGrid.title1}{" "}
+            <span className="text-brand-red-600 dark:text-brand-red-400">
+              {t.serviciosGrid.titleHighlight}
+            </span>{" "}
+            {t.serviciosGrid.title2}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-400 sm:text-lg">
@@ -77,7 +96,7 @@ export default function ServiciosGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          className="mt-12 grid gap-px overflow-hidden rounded-t-[1.75rem] border-x border-t border-slate-200 dark:border-white/10 bg-slate-200 dark:bg-white/10 md:grid-cols-2 xl:grid-cols-6"
+          className="mt-12 grid gap-px overflow-hidden rounded-t-3xl border-x border-t border-slate-200 dark:border-white/10 bg-slate-200 dark:bg-white/10 md:grid-cols-2 xl:grid-cols-6"
         >
           {services.map((service) => {
             const Icon = service.icon;
@@ -88,25 +107,27 @@ export default function ServiciosGrid() {
                 key={service.id}
                 type="button"
                 onClick={() => setActiveId(service.id)}
-                className={`group relative min-h-[170px] bg-white  p-6 text-left transition-all duration-300 hover:bg-[#FF2738] md:min-h-[180px] xl:min-h-[190px] ${
-                  active ? "bg-[#FF2738]" : "bg-[#000000]"
+                className={`group relative min-h-[170px] p-6 text-left transition-all duration-300 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-red-600 md:min-h-[180px] xl:min-h-[190px] ${
+                  active
+                    ? "bg-brand-red-600"
+                    : "bg-white hover:bg-brand-red-600 dark:bg-brand-navy-800 dark:hover:bg-brand-red-600"
                 }`}
               >
                 <div
-                  className={`mx-auto flex h-12 w-12 items-center justify-center rounded-2xl  border transition-all duration-300 ${
+                  className={`mx-auto flex h-12 w-12 items-center justify-center rounded-3xl border transition-all duration-300 ${
                     active
-                      ? "border-white/20 text-black"
-                      : "border-[#07182D]/10 dark:border-white/10 bg-white dark:bg-white/5 text-[#07182D] dark:text-white group-hover:border-white/20 group-hover:bg-white/15 group-hover:text-white"
+                      ? "border-white/25 bg-white/15 text-white"
+                      : "border-brand-navy/10 bg-white text-brand-navy group-hover:border-white/25 group-hover:bg-white/15 group-hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-white"
                   }`}
                 >
                   <Icon size={22} />
                 </div>
 
                 <h3
-                  className={`mt-5 text-center text-lg font-extrabold tracking-[-0.03em] transition-colors duration-300 ${
+                  className={`type-h3 mt-5 text-center transition-colors duration-300 ${
                     active
-                      ? "text-black"
-                      : "text-[#07182D] dark:text-white group-hover:text-white"
+                      ? "text-white"
+                      : "text-brand-navy group-hover:text-white dark:text-white"
                   }`}
                 >
                   {service.title}
@@ -115,18 +136,16 @@ export default function ServiciosGrid() {
                 <p
                   className={`mx-auto mt-2 max-w-[18rem] text-center text-sm leading-6 transition-colors duration-300 ${
                     active
-                      ? "text-black"
-                      : "text-slate-500 group-hover:text-white/85"
+                      ? "text-white/90"
+                      : "text-slate-500 group-hover:text-white/85 dark:text-slate-400"
                   }`}
                 >
                   {service.description}
                 </p>
 
                 <div
-                  className={`absolute inset-x-0 bottom-0 h-1 transition-all duration-300  ${
-                    active
-                      ? "bg-white text-black"
-                      : "bg-[#FF2738] opacity-100 "
+                  className={`absolute inset-x-0 bottom-0 h-1 transition-all duration-300 ${
+                    active ? "bg-white" : "bg-brand-red-600"
                   }`}
                 />
               </button>
@@ -144,7 +163,7 @@ export default function ServiciosGrid() {
         >
           {/* Texto */}
           <div>
-            <p className="text-[11px] font-bold tracking-[0.18em] text-[#FF2738] uppercase">
+            <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
               {t.serviciosGrid.selectedLabel}
             </p>
 
@@ -156,7 +175,7 @@ export default function ServiciosGrid() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.35 }}
               >
-                <h3 className="mt-4 text-3xl font-black tracking-[-0.04em] text-[#07182D] dark:text-white sm:text-4xl">
+                <h3 className="type-h3 mt-4 text-[#07182D] dark:text-white">
                   {activeService.title}
                 </h3>
 
@@ -167,7 +186,10 @@ export default function ServiciosGrid() {
                 <div className="mt-8 space-y-4">
                   {t.serviciosGrid.bullets.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 text-[#FF2738]" size={18} />
+                      <CheckCircle2
+                        className="mt-0.5 text-brand-red-600 dark:text-brand-red-400"
+                        size={18}
+                      />
                       <span className="text-sm leading-6 text-slate-700 dark:text-slate-300">
                         {item}
                       </span>
@@ -176,7 +198,7 @@ export default function ServiciosGrid() {
                 </div>
 
                 <div className="mt-10 flex flex-wrap gap-4">
-                  <button className="inline-flex items-center gap-2 rounded-2xl bg-[#ff2738] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#07182D]/15 transition-transform hover:-translate-y-0.5">
+                  <button className="inline-flex items-center gap-2 rounded-3xl bg-brand-red-600 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#07182D]/15 transition-transform hover:-translate-y-0.5">
                     {t.serviciosGrid.exploreCta} <ArrowRight size={16} />
                   </button>
                 </div>
@@ -186,10 +208,10 @@ export default function ServiciosGrid() {
 
           {/* Imagen */}
           <div className="relative">
-            <div className="absolute -left-6 top-10 h-32 w-32 rounded-full bg-[#FF2738]/10 blur-3xl" />
+            <div className="absolute -left-6 top-10 h-32 w-32 rounded-full bg-brand-red-500/10 blur-3xl" />
             <div className="absolute -right-6 bottom-10 h-40 w-40 rounded-full bg-[#07182D]/10 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-white dark:border-white/10 bg-white dark:bg-white/5 shadow-2xl shadow-slate-900/10">
+            <div className="relative overflow-hidden rounded-3xl border border-white dark:border-white/10 bg-white dark:bg-white/5 shadow-2xl ">
               <motion.div
                 key={activeService.id}
                 initial={{ opacity: 0, scale: 1.02 }}
@@ -207,13 +229,13 @@ export default function ServiciosGrid() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07182D]/75 via-[#07182D]/15 to-transparent" />
 
-                <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-[#07182D] shadow-lg backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-[#FF2738]" />
+                <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-[#07182D] elev-2 backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-brand-red-600" />
                   Develoclick
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                  <div className="max-w-md rounded-[1.5rem] border border-white/10 bg-white/10 p-5 backdrop-blur-xl">
+                  <div className="max-w-md rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur-xl">
                     <p className="text-sm leading-6 text-white/85">
                       {t.serviciosGrid.quote}
                     </p>

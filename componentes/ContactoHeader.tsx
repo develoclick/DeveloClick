@@ -10,21 +10,25 @@ export default function ContactHeader() {
       <div
         className="absolute inset-0 z-0 opacity-[0.4] dark:opacity-[0.08]"
         style={{
-          backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
+          backgroundImage:
+            "linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6">
         {/* Etiqueta CONTACTO */}
-        <div className="flex items-center gap-3 text-[#E63946] font-bold tracking-[0.2em] text-[11px] uppercase mb-6">
-          <div className="h-[2px] w-8 bg-[#E63946]"></div>
+        <div className="flex items-center gap-3 text-brand-red-600 dark:text-brand-red-400 font-bold tracking-[0.18em] text-[11px] uppercase mb-6">
+          <div className="h-[2px] w-8 bg-brand-red-600"></div>
           {t.contactoHeader.badge}
         </div>
 
         {/* Título Principal */}
-        <h1 className="text-5xl md:text-7xl font-extrabold text-[#07182d] dark:text-white mb-6 tracking-tight">
-          {t.contactoHeader.title1} <span className="text-[#E63946]">{t.contactoHeader.titleHighlight}</span>
+        <h1 className="type-display text-[#07182d] dark:text-white mb-6">
+          {t.contactoHeader.title1}{" "}
+          <span className="text-brand-red-600 dark:text-brand-red-400">
+            {t.contactoHeader.titleHighlight}
+          </span>
         </h1>
 
         {/* Subtítulo */}

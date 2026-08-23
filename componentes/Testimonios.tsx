@@ -1,18 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Layers3,
-  MessageSquareMore,
-  Rocket,
-  ArrowRight,
-} from "lucide-react";
+import { Layers3, MessageSquareMore, Rocket, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
 
 const items = [
   {
     icon: Layers3,
-    color: "from-[#E63946] to-[#ff6b75]",
+    color: "from-brand-red-600 to-[#ff6b75]",
   },
   {
     icon: MessageSquareMore,
@@ -29,30 +24,27 @@ export default function Compromiso() {
 
   return (
     <section className="relative overflow-hidden bg-white py-24 dark:bg-[#07182D] lg:py-32">
-
       {/* Background */}
-      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#E63946]/5 blur-3xl" />
+      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-brand-red-500/5 blur-3xl" />
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-
         {/* Header */}
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .6 }}
+          transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-
-          <span className="inline-flex rounded-full border border-[#E63946]/20 bg-[#E63946]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.25em] text-[#E63946]">
+          <span className="type-eyebrow inline-flex rounded-full border border-brand-red-500/20 bg-brand-red-500/10 px-4 py-1 text-brand-red-600 dark:text-brand-red-400">
             {t.testimonios.eyebrow}
           </span>
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-[#07182D] dark:text-white sm:text-5xl lg:text-6xl">
+          <h2 className="type-h2 mt-6 text-[#07182D] dark:text-white">
             {t.testimonios.title1}{" "}
-            <span className="text-[#E63946]">
+            <span className="text-brand-red-600 dark:text-brand-red-400">
               {t.testimonios.titleHighlight}
             </span>
           </h2>
@@ -65,42 +57,38 @@ export default function Compromiso() {
         {/* Cards */}
 
         <div className="mt-20 grid gap-8 md:grid-cols-3">
-
           {t.testimonios.items.map((item, index) => {
-
             const Icon = items[index].icon;
 
             return (
-
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: .55,
-                  delay: index * .12,
+                  duration: 0.55,
+                  delay: index * 0.12,
                 }}
-                className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#E63946]/30 hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.03]"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white p-8 elev-1 transition-all duration-500 hover:-translate-y-2 hover:border-brand-red-500/30 hover:elev-3 dark:border-white/10 dark:bg-white/[0.03]"
               >
-
                 {/* Glow */}
 
                 <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-                  <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#E63946]/10 blur-3xl" />
+                  <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-brand-red-500/10 blur-3xl" />
                 </div>
 
                 {/* Icon */}
 
                 <div
-                  className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${items[index].color} shadow-lg`}
+                  className={`flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br ${items[index].color} elev-2`}
                 >
                   <Icon className="h-8 w-8 text-white" />
                 </div>
 
                 {/* Title */}
 
-                <h3 className="mt-8 text-2xl font-bold text-[#07182D] dark:text-white">
+                <h3 className="type-h3 mt-8 text-[#07182D] dark:text-white">
                   {item.title}
                 </h3>
 
@@ -112,16 +100,12 @@ export default function Compromiso() {
 
                 {/* Bottom */}
 
-                <div className="mt-8 flex items-center gap-2 font-semibold text-[#E63946]">
-
-                  <span>Compromiso DeveloClick</span>
+                <div className="mt-8 flex items-center gap-2 font-semibold text-brand-red-600 dark:text-brand-red-400">
+                  <span>{t.testimonios.cardTag}</span>
 
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-
                 </div>
-
               </motion.div>
-
             );
           })}
         </div>
@@ -132,24 +116,16 @@ export default function Compromiso() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: .4 }}
-          className="mt-24 rounded-[32px] border border-[#E63946]/15 bg-gradient-to-r from-[#07182D] via-[#0B2545] to-[#07182D] p-10 text-center shadow-2xl"
+          transition={{ delay: 0.4 }}
+          className="mt-24 rounded-3xl border border-brand-red-500/15 bg-gradient-to-r from-[#07182D] via-[#0B2545] to-[#07182D] p-10 text-center elev-3"
         >
-
-          <h3 className="text-3xl font-bold text-white">
-            No solo desarrollamos software.
-          </h3>
+          <h3 className="type-h3 text-white">{t.testimonios.bottomTitle}</h3>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/75">
-            Construimos herramientas digitales que ayudan a las empresas a
-            vender más, optimizar procesos y crecer con tecnología moderna,
-            escalable y diseñada para el futuro.
+            {t.testimonios.bottomParagraph}
           </p>
-
         </motion.div>
-
       </div>
-
     </section>
   );
 }

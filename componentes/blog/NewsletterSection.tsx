@@ -1,84 +1,61 @@
-"use client";
+import Link from "next/link";
+import { ArrowRight, Mail } from "lucide-react";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Mail, Send } from "lucide-react";
-
+/**
+ * Bloque de cierre del blog.
+ *
+ * Antes era un formulario de newsletter que mostraba "¡Listo!" sin transmitir
+ * los datos a ningún sitio: cada suscriptor se perdía en silencio. Como no hay
+ * proveedor de email marketing conectado, se sustituye por un acceso real al
+ * único canal operativo (el cotizador) y al correo directo. No se promete un
+ * servicio que no existe.
+ */
 export default function NewsletterSection() {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!isValid) {
-      setError("Ingresa un correo electrónico válido.");
-      return;
-    }
-    setError("");
-    setSent(true);
-  };
-
   return (
     <section className="relative mx-auto max-w-5xl px-6 py-4">
-      <div className="relative overflow-hidden rounded-[2.5rem] bg-[#07182D] px-8 py-14 text-center shadow-2xl sm:px-14 sm:py-16">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(230,57,70,0.3),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(59,130,246,0.2),transparent_45%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="relative overflow-hidden rounded-3xl bg-brand-navy px-8 py-14 text-center elev-3 sm:px-14 sm:py-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(230,57,70,0.3),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(59,130,246,0.2),transparent_45%)]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+        />
 
         <div className="relative z-10 mx-auto max-w-xl">
-          <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-[#E63946]">
+          <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-white/10 text-brand-red-400">
             <Mail size={22} />
           </div>
 
-          <h2 className="mt-5 text-2xl font-display font-bold leading-tight tracking-tight text-white sm:text-3xl">
-            Recibe estrategias tecnológicas para hacer crecer tu empresa.
+          <h2 className="type-h2 mt-5 text-white">
+            ¿Quieres aplicar estas ideas en tu empresa?
           </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-            Un correo al mes. Cero spam. Solo ideas prácticas que puedes aplicar de inmediato.
+
+          <p className="mt-4 text-base leading-8 text-slate-300">
+            Cuéntanos tu proyecto en dos minutos y te respondemos con una
+            propuesta concreta en menos de 24 horas hábiles.
           </p>
 
-          <AnimatePresence mode="wait">
-            {sent ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="mt-8 flex flex-col items-center gap-2 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-6 py-5"
-              >
-                <CheckCircle2 size={28} className="text-emerald-400" />
-                <p className="text-sm font-semibold text-white">¡Listo! Revisa tu correo para confirmar la suscripción.</p>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                onSubmit={handleSubmit}
-                className="mt-8 flex flex-col gap-3 sm:flex-row"
-                noValidate
-              >
-                <div className="flex-1 text-left">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="tucorreo@empresa.com"
-                    aria-label="Correo electrónico"
-                    className="w-full rounded-xl border border-white/15 bg-white/[0.05] px-5 py-4 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-[#E63946] focus:bg-white/[0.08]"
-                  />
-                  {error && <p className="mt-2 text-xs font-semibold text-red-400">{error}</p>}
-                </div>
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E63946] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#E63946]/25 transition-transform hover:-translate-y-0.5"
-                >
-                  Suscribirme <Send size={16} />
-                </button>
-              </motion.form>
-            )}
-          </AnimatePresence>
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/#cotizador"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white elev-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c1303b] sm:w-auto"
+            >
+              Abrir el cotizador
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              />
+            </Link>
+
+            <a
+              href="mailto:develoclick@gmail.com"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 sm:w-auto"
+            >
+              develoclick@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </section>

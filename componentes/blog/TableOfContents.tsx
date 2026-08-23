@@ -17,7 +17,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
           setActiveId(visible[0].target.id);
         }
       },
-      { rootMargin: "-100px 0px -70% 0px", threshold: 0 }
+      { rootMargin: "-100px 0px -70% 0px", threshold: 0 },
     );
 
     headings.forEach((h) => {
@@ -31,18 +31,24 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
   if (headings.length === 0) return null;
 
   return (
-    <nav aria-label="Tabla de contenidos" className="rounded-2xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6">
-      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E63946]">
+    <nav
+      aria-label="Tabla de contenidos"
+      className="rounded-3xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6"
+    >
+      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-red-600 dark:text-brand-red-400">
         <List size={14} /> En este artículo
       </div>
       <ul className="mt-4 space-y-2.5 border-l border-slate-100 dark:border-white/10">
         {headings.map((heading) => (
-          <li key={heading.id} className={heading.depth === 3 ? "pl-7" : "pl-4"}>
+          <li
+            key={heading.id}
+            className={heading.depth === 3 ? "pl-7" : "pl-4"}
+          >
             <a
               href={`#${heading.id}`}
               className={`block border-l-2 -ml-px pl-3 text-[13px] leading-5 transition-colors ${
                 activeId === heading.id
-                  ? "border-[#E63946] font-semibold text-[#E63946]"
+                  ? "border-brand-red-600 font-semibold text-brand-red-600 dark:text-brand-red-400"
                   : "border-transparent text-slate-500 dark:text-slate-400 hover:text-[#07182D] dark:hover:text-white"
               }`}
             >

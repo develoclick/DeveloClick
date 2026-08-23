@@ -8,6 +8,20 @@
 
   --font-display: var(--font-space);
 
+  /* ---- Paleta de marca (misma familia, contraste corregido a WCAG AA) ---- */
+  /* Navy: sin cambios, 17.83:1 sobre blanco */
+  --color-brand-navy: #07182d;
+  --color-brand-navy-800: #0a192f;
+  --color-brand-navy-700: #13375f;
+
+  /* Rojo: #E63946 fallaba AA (4.17:1). 600 es el mismo rojo 8% más oscuro -> 4.81:1 AA */
+  --color-brand-red-600: #d43440; /* texto sobre blanco + fondo de botón con texto blanco */
+  --color-brand-red-500: #e63946; /* solo decorativo: glows, bordes, fondos translúcidos */
+  --color-brand-red-400: #ed6c76; /* rojo sobre navy: 5.95:1 puro / 4.84:1 superficies elevadas -> AA */
+
+  /* ---- Escala de espaciado (múltiplos de 8) ---- */
+  --spacing-section: 6rem;    /* 96px  */
+  --spacing-section-lg: 8rem; /* 128px */
 }
 
 button,
@@ -19,6 +33,57 @@ a {
 }
 body {
   font-family: var(--font-inter);
+}
+
+/* ============================================================
+   ESCALA TIPOGRÁFICA — 6 estilos. Ningún tamaño ad hoc fuera de aquí.
+   Space Grotesk = display (títulos). Inter = texto corrido.
+   Solo 3 valores de tracking: -0.02em / -0.01em / 0.18em
+   ============================================================ */
+.type-display {
+  font-family: var(--font-space);
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+}
+.type-h2 {
+  font-family: var(--font-space);
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.type-h3 {
+  font-family: var(--font-space);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.type-h4 {
+  font-family: var(--font-space);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.type-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: normal;
+}
+.type-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: normal;
+}
+.type-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 p {
   font-family: var(--font-inter);
@@ -124,5 +189,127 @@ p {
 }
 
 .field:focus{
-@apply border-[#E63946];
+@apply border-brand-red-600;
+}
+/* ============================================================
+   ESTADOS INTERACTIVOS
+   Foco visible global (accesibilidad + pulido). Se aplica solo a
+   navegación por teclado, no al clic de ratón.
+   ============================================================ */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-brand-red-600);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.dark :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: var(--color-brand-red-400);
+}
+/* Superficies rojas: el foco necesita contrastar contra el propio botón */
+:where(.bg-brand-red-600, .bg-brand-red-500):focus-visible {
+  outline-color: #ffffff;
+  outline-offset: 3px;
+}
+
+/* Área táctil mínima 44x44 sin alterar el tamaño visual del control */
+@media (pointer: coarse), (max-width: 1023px) {
+  :where(nav a, nav button, footer a, .tap-target) {
+    position: relative;
+  }
+  :where(nav a, nav button, footer a, .tap-target)::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ============================================================
+   JERARQUÍA DE ELEVACIÓN — 3 niveles, no una sombra repetida
+   ============================================================ */
+.elev-1 { box-shadow: 0 1px 2px rgb(7 24 45 / 0.04), 0 2px 8px rgb(7 24 45 / 0.04); }
+.elev-2 { box-shadow: 0 4px 12px rgb(7 24 45 / 0.08), 0 12px 28px rgb(7 24 45 / 0.06); }
+.elev-3 { box-shadow: 0 12px 32px rgb(7 24 45 / 0.14), 0 32px 64px rgb(7 24 45 / 0.10); }
+.dark .elev-1 { box-shadow: 0 1px 2px rgb(0 0 0 / 0.30); }
+.dark .elev-2 { box-shadow: 0 8px 24px rgb(0 0 0 / 0.40); }
+.dark .elev-3 { box-shadow: 0 20px 48px rgb(0 0 0 / 0.55); }
+
+/* Respeto de prefers-reduced-motion en todo el sitio */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   INTRO DE MARCA
+   El overlay se renderiza siempre en el HTML, pero solo es visible si el
+   script anti-flash marcó <html class="dc-intro"> antes del primer pintado.
+   Así no hay parpadeo en visitas siguientes ni desajuste de hidratación.
+   ============================================================ */
+.dc-intro-overlay { display: none; }
+html.dc-intro .dc-intro-overlay { display: flex; }
+html.dc-intro body { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-intro-overlay { display: none !important; }
+  html.dc-intro body { overflow: auto; }
+}
+
+/* ============================================================
+   BARRA DE DESPLAZAMIENTO
+   Firefox usa scrollbar-color; Chromium/Safari los pseudoelementos.
+   Se declaran ambos para cubrir todos los navegadores.
+   ============================================================ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-red-600) transparent;
+}
+.dark html,
+html.dark {
+  scrollbar-color: var(--color-brand-red-400) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef1f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3ccd8;
+  border-radius: 999px;
+  /* El borde del color de la pista adelgaza visualmente el pulgar sin
+     reducir el área real de arrastre. */
+  border: 2px solid #eef1f5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red-600);
+}
+::-webkit-scrollbar-corner {
+  background: #eef1f5;
+}
+
+html.dark ::-webkit-scrollbar-track,
+html.dark ::-webkit-scrollbar-corner {
+  background: #0a192f;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #274056;
+  border-color: #0a192f;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red-400);
+}
+
+/* Contenedores con scroll propio (tablas, código del blog): pista transparente
+   para que no aparezca una franja clara sobre superficies oscuras. */
+.tw::-webkit-scrollbar-track,
+[class*="overflow-x-auto"]::-webkit-scrollbar-track {
+  background: transparent;
 }

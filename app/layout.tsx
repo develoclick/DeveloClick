@@ -3,22 +3,21 @@ import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/componentes/ThemeProvider";
 import { LanguageProvider } from "@/componentes/i18n/LanguageProvider";
+import AnimatedLayout from "@/componentes/motion/AnimatedLayout";
+import { SITE_URL, SITE_NAME, SITE_EMAIL, OG_IMAGE } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
 });
 
-const siteUrl = "https://develoclick.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "DeveloClick - Soluciones digitales para hacer crecer tu negocio",
     template: "%s | DeveloClick",
@@ -42,26 +41,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: siteUrl,
+    url: SITE_URL,
     siteName: "DeveloClick",
     title: "DeveloClick - Soluciones digitales para hacer crecer tu negocio",
     description:
       "Diseñamos y desarrollamos webs, software a medida y plataformas SaaS que convierten visitas en clientes.",
-    images: [
-      {
-        url: "/imagenes/develoclick_logo_PNG.png",
-        width: 1200,
-        height: 630,
-        alt: "DeveloClick",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "DeveloClick - Soluciones digitales para hacer crecer tu negocio",
     description:
       "Diseñamos y desarrollamos webs, software a medida y plataformas SaaS que convierten visitas en clientes.",
-    images: ["/imagenes/develoclick_logo_PNG.png"],
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -85,19 +77,46 @@ export const viewport: Viewport = {
   ],
 };
 
+/**
+ * ProfessionalService: schema correcto para un negocio de servicios cuyo objetivo
+ * es la solicitud de contacto. Sin dirección física (no publicamos datos que no
+ * podamos sostener); el contacto se declara vía ContactPoint.
+ */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "DeveloClick",
-  url: siteUrl,
-  logo: `${siteUrl}/imagenes/develoclick_logo_PNG.png`,
-  description:
-    "Diseñamos y desarrollamos webs, software a medida y plataformas SaaS que convierten visitas en clientes.",
-  email: "hola@develoclick.com",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "PE",
-  },
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}${OG_IMAGE.url}`,
+        width: 1200,
+        height: 630,
+      },
+      description:
+        "Diseñamos y desarrollamos webs, software a medida y plataformas SaaS que convierten visitas en clientes.",
+      email: SITE_EMAIL,
+      areaServed: "Worldwide",
+      availableLanguage: ["es", "en"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: SITE_EMAIL,
+        availableLanguage: ["es", "en"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "DeveloClick",
+      inLanguage: "es",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 const noFlashScript = `
@@ -106,6 +125,15 @@ const noFlashScript = `
     var stored = localStorage.getItem("develoclick-theme");
     var isDark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", isDark);
+
+    // Decide la intro antes del primer pintado: sin parpadeo y sin desajuste
+    // de hidratacion. Solo primera carga de la sesion y sin movimiento reducido.
+    var visto = sessionStorage.getItem("develoclick-intro-visto");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!visto && !reduce) {
+      document.documentElement.classList.add("dc-intro");
+      sessionStorage.setItem("develoclick-intro-visto", "1");
+    }
   } catch (e) {}
 })();
 `;
@@ -130,7 +158,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white dark:bg-[#07182d] transition-colors duration-300">
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <AnimatedLayout>{children}</AnimatedLayout>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

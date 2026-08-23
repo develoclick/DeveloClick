@@ -12,9 +12,13 @@ import CTAArticle from "@/componentes/blog/CTAArticle";
 import RelatedArticles from "@/componentes/blog/RelatedArticles";
 import NewsletterSection from "@/componentes/blog/NewsletterSection";
 import { mdxComponents } from "@/componentes/blog/MDXComponents";
-import { getAllPosts, getPostBySlug, getRelatedPosts, extractHeadings } from "@/lib/blog";
-
-const SITE_URL = "https://develoclick.com";
+import { SITE_URL } from "@/lib/site";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getRelatedPosts,
+  extractHeadings,
+} from "@/lib/blog";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -42,7 +46,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
-      images: [{ url: `${SITE_URL}${post.cover}`, width: 1200, height: 630, alt: post.coverAlt }],
+      images: [
+        {
+          url: `${SITE_URL}${post.cover}`,
+          width: 1200,
+          height: 630,
+          alt: post.coverAlt,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -74,7 +85,10 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "DeveloClick",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/imagenes/develoclick_logo_PNG.png` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/imagenes/develoclick_logo_PNG.png`,
+      },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
@@ -84,15 +98,26 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
       { "@type": "ListItem", position: 3, name: post.title, item: url },
     ],
   };
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       <ReadingProgress targetId="article-body" />
       <Navbar />
@@ -108,7 +133,10 @@ export default async function BlogPostPage({ params }: Props) {
         coverAlt={post.coverAlt}
       />
 
-      <div id="article-body" className="bg-white dark:bg-[#07182d] pb-8 transition-colors duration-300">
+      <div
+        id="article-body"
+        className="bg-white dark:bg-[#07182d] pb-8 transition-colors duration-300"
+      >
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 pt-12 lg:grid-cols-[1fr_240px]">
           <article className="min-w-0">
             <MDXRemote

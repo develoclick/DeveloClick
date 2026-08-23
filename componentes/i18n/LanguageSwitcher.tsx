@@ -2,7 +2,11 @@
 
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
 
-export default function LanguageSwitcher({ className = "" }: { className?: string }) {
+export default function LanguageSwitcher({
+  className = "",
+}: {
+  className?: string;
+}) {
   const { lang, setLang } = useLanguage();
 
   return (
@@ -15,9 +19,9 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
         type="button"
         onClick={() => setLang("es")}
         aria-pressed={lang === "es"}
-        className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 transition ${
+        className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 transition ${
           lang === "es"
-            ? "bg-[#E63946] text-white"
+            ? "bg-brand-red-600 text-white"
             : "text-gray-500 dark:text-slate-400 hover:text-gray-800 dark:hover:text-white"
         }`}
       >
@@ -27,9 +31,9 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
         type="button"
         onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
-        className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 transition ${
+        className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 transition ${
           lang === "en"
-            ? "bg-[#E63946] text-white"
+            ? "bg-brand-red-600 text-white"
             : "text-gray-500 dark:text-slate-400 hover:text-gray-800 dark:hover:text-white"
         }`}
       >

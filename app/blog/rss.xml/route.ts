@@ -1,6 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
-
-const SITE_URL = "https://develoclick.com";
+import { SITE_URL } from "@/lib/site";
 
 function escapeXml(value: string) {
   return value
