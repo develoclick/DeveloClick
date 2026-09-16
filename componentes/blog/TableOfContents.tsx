@@ -49,7 +49,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
               className={`block border-l-2 -ml-px pl-3 text-[13px] leading-5 transition-colors ${
                 activeId === heading.id
                   ? "border-brand-red-600 font-semibold text-brand-red-600 dark:text-brand-red-400"
-                  : "border-transparent text-slate-500 dark:text-slate-400 hover:text-[#07182D] dark:hover:text-white"
+                  : "border-transparent text-slate-500 dark:text-slate-400 hover:text-brand-navy dark:hover:text-white"
               }`}
             >
               {heading.text}

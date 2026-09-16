@@ -38,13 +38,13 @@ export default function CategoryCard({
         className={`flex h-12 w-12 items-center justify-center rounded-3xl transition-all duration-300 ${
           active
             ? "bg-brand-red-600 text-white"
-            : "bg-slate-50 dark:bg-white/5 text-[#07182D] dark:text-white group-hover:bg-brand-red-600 group-hover:text-white"
+            : "bg-slate-50 dark:bg-white/5 text-brand-navy dark:text-white group-hover:bg-brand-red-600 group-hover:text-white"
         }`}
       >
         <Icon size={22} />
       </div>
 
-      <h3 className="type-h3 mt-4 text-[#07182D] dark:text-white">{name}</h3>
+      <h3 className="type-h3 mt-4 text-brand-navy dark:text-white">{name}</h3>
       <p className="mt-1.5 text-xs leading-5 text-slate-500 dark:text-slate-400">
         {description}
       </p>

@@ -35,7 +35,7 @@ function fileToPost(filename: string): BlogPost {
     title: data.title ?? "",
     description: data.description ?? "",
     excerpt: data.excerpt ?? data.description ?? "",
-    cover: data.cover ?? "/imagenes/equipo-corporativo.jpg",
+    cover: data.cover ?? "/imagenes/01_equipo_estrategia_digital.jpg",
     coverAlt: data.coverAlt ?? data.title ?? "",
     date: data.date ?? "",
     author: data.author ?? "Equipo DeveloClick",
@@ -54,7 +54,9 @@ export function getAllPosts(): BlogPost[] {
   if (cachedPosts) return cachedPosts;
   if (!fs.existsSync(BLOG_DIR)) return [];
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
-  const posts = files.map(fileToPost).sort((a, b) => (a.date < b.date ? 1 : -1));
+  const posts = files
+    .map(fileToPost)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
   cachedPosts = posts;
   return posts;
 }
@@ -105,7 +107,13 @@ export function searchPosts(query: string): BlogPost[] {
   const q = query.trim().toLowerCase();
   if (!q) return getAllPosts();
   return getAllPosts().filter((post) => {
-    const haystack = [post.title, post.description, post.category, ...post.tags, post.content]
+    const haystack = [
+      post.title,
+      post.description,
+      post.category,
+      ...post.tags,
+      post.content,
+    ]
       .join(" ")
       .toLowerCase();
     return haystack.includes(q);

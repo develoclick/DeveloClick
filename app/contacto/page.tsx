@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Navbar from "@/componentes/Navbar";
-import ContactoHeader from "@/componentes/ContactoHeader";
+import {
+  ContactoHero,
+  ContactoFaq,
+} from "@/componentes/contacto/ContactoContenido";
 import ContactoSection from "@/componentes/ContactoSection";
 import Cotizador from "@/componentes/Cotizador";
 import Footer from "@/componentes/Footer";
+import BreadcrumbJsonLd from "@/componentes/ui/BreadcrumbJsonLd";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -20,14 +24,16 @@ export const metadata: Metadata = {
   },
 };
 
+/** Canal único de contacto: el Cotizador. */
 export default function Contacto() {
   return (
-    <main className="pt-20">
+    <main>
+      <BreadcrumbJsonLd name="Contacto" path="/contacto" />
       <Navbar />
-      <ContactoHeader />
-      {/* Bloque de confianza (cómo funciona) seguido del canal único de contacto */}
+      <ContactoHero />
       <ContactoSection />
       <Cotizador />
+      <ContactoFaq />
       <Footer />
     </main>
   );

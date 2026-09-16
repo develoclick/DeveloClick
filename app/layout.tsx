@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Orbitron } from "next/font/google";
 import { ThemeProvider } from "@/componentes/ThemeProvider";
 import { LanguageProvider } from "@/componentes/i18n/LanguageProvider";
 import AnimatedLayout from "@/componentes/motion/AnimatedLayout";
@@ -14,6 +14,13 @@ const inter = Inter({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
+});
+
+/** Tipografía del logo. Se autoaloja en build, igual que las otras dos. */
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -65,6 +72,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/imagenes/favicon.png",
+    apple: "/imagenes/develoclick_simbolo.png",
   },
 };
 
@@ -73,7 +81,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#07182d" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1526" },
   ],
 };
 
@@ -147,7 +155,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${orbitron.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: noFlashScript }} />
@@ -156,7 +164,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white dark:bg-[#07182d] transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-white dark:bg-brand-ink transition-colors duration-300">
         <ThemeProvider>
           <LanguageProvider>
             <AnimatedLayout>{children}</AnimatedLayout>

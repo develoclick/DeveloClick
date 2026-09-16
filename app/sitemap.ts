@@ -3,7 +3,15 @@ import { SITE_URL } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/servicios", "/nosotros", "/precios", "/contacto", "/blog"];
+  const routes = [
+    "",
+    "/servicios",
+    "/proceso",
+    "/nosotros",
+    "/precios",
+    "/blog",
+    "/contacto",
+  ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${SITE_URL}${route}`,

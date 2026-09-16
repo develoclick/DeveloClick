@@ -58,7 +58,7 @@ export default function Cotizador() {
   return (
     <section
       id="cotizador"
-      className="relative scroll-mt-24 overflow-hidden bg-[#07182d] py-24 text-white lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-brand-ink py-24 text-white lg:py-32"
     >
       {/* Elementos de fondo decorativos */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-red-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -123,7 +123,7 @@ export default function Cotizador() {
         )}
 
         {/* CARD CONTAINER PRINCIPAL */}
-        <div className="rounded-3xl border border-white/10 bg-[#0A192F]/80 p-8 shadow-2xl shadow-black/40 backdrop-blur-xl sm:p-12 relative overflow-hidden">
+        <div className="rounded-3xl border border-white/10 bg-brand-navy-800/80 p-8 shadow-2xl shadow-black/40 backdrop-blur-xl sm:p-12 relative overflow-hidden">
           <AnimatePresence mode="wait">
             {isSubmitted ? (
               <motion.div

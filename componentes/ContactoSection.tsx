@@ -15,7 +15,10 @@ export default function ContactSection() {
   const cs = t.contactoSection;
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 transition-colors duration-300 dark:bg-brand-navy lg:py-32">
+    <section
+      id="como-funciona"
+      className="relative overflow-hidden bg-white py-24 transition-colors duration-300 dark:bg-brand-ink lg:py-32"
+    >
       <div className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-brand-red-500/8 blur-[110px]" />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -58,8 +61,8 @@ export default function ContactSection() {
             </div>
 
             <Link
-              href="/#cotizador"
-              className="group mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-red-600/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c1303b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-600"
+              href="/contacto#cotizador"
+              className="group mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-red-600/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-600"
             >
               {cs.ctaLabel}
               <ArrowRight

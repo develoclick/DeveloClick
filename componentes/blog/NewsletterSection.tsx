@@ -16,7 +16,7 @@ export default function NewsletterSection() {
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy px-8 py-14 text-center elev-3 sm:px-14 sm:py-16">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(230,57,70,0.3),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(59,130,246,0.2),transparent_45%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(189,31,35,0.3),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(59,130,246,0.2),transparent_45%)]"
         />
         <div
           aria-hidden
@@ -39,8 +39,8 @@ export default function NewsletterSection() {
 
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/#cotizador"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white elev-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c1303b] sm:w-auto"
+              href="/contacto#cotizador"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white elev-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red-700 sm:w-auto"
             >
               Abrir el cotizador
               <ArrowRight

@@ -21,7 +21,7 @@ export default function GlobalError({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#07182d",
+          backgroundColor: "#0a1526",
           color: "#ffffff",
           fontFamily:
             "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
@@ -37,7 +37,7 @@ export default function GlobalError({
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#ed6c76",
+              color: "#f27479",
             }}
           >
             Error inesperado
@@ -87,7 +87,7 @@ export default function GlobalError({
               cursor: "pointer",
               border: "none",
               borderRadius: "12px",
-              backgroundColor: "#d43440",
+              backgroundColor: "#bd1f23",
               color: "#ffffff",
               padding: "1rem 1.75rem",
               fontSize: "0.875rem",

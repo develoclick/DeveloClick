@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 /**
  * Transición entre rutas.
@@ -9,8 +9,11 @@ import { motion, useReducedMotion } from "framer-motion";
  * `children` llega como prop desde el layout (Server Component), así que las
  * páginas siguen renderizándose en servidor: este cliente solo envuelve.
  *
- * Solo se animan `opacity` y `transform`, ambas compuestas por GPU, para no
- * provocar reflow ni saltos de maquetación.
+ * El árbol es siempre el mismo, con o sin movimiento reducido. Ramificar el
+ * render con `useReducedMotion` rompía la hidratación: el servidor no conoce
+ * la preferencia y React 19 no corrige atributos desajustados, así que la
+ * página quedaba con opacity 0. La reducción la aplica `MotionConfig` en
+ * AnimatedLayout (desactiva el desplazamiento y conserva un fundido).
  */
 export default function PageTransition({
   children,
@@ -18,9 +21,6 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const reduceMotion = useReducedMotion();
-
-  if (reduceMotion) return <>{children}</>;
 
   return (
     <motion.div

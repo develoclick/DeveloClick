@@ -15,7 +15,7 @@ export default function FeaturedArticles({
         <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
           Destacados
         </p>
-        <h2 className="type-h2 mt-3 text-[#07182D] dark:text-white">
+        <h2 className="type-h2 mt-3 text-brand-navy dark:text-white">
           Lo más leído esta temporada.
         </h2>
       </div>

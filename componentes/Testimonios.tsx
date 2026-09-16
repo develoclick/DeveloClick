@@ -11,7 +11,7 @@ const items = [
   },
   {
     icon: MessageSquareMore,
-    color: "from-[#07182D] to-[#13375f]",
+    color: "from-brand-ink to-[#13375f]",
   },
   {
     icon: Rocket,
@@ -23,7 +23,7 @@ export default function Compromiso() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 dark:bg-[#07182D] lg:py-32">
+    <section className="relative overflow-hidden bg-white py-24 dark:bg-brand-ink lg:py-32">
       {/* Background */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-brand-red-500/5 blur-3xl" />
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl" />
@@ -42,7 +42,7 @@ export default function Compromiso() {
             {t.testimonios.eyebrow}
           </span>
 
-          <h2 className="type-h2 mt-6 text-[#07182D] dark:text-white">
+          <h2 className="type-h2 mt-6 text-brand-navy dark:text-white">
             {t.testimonios.title1}{" "}
             <span className="text-brand-red-600 dark:text-brand-red-400">
               {t.testimonios.titleHighlight}
@@ -88,7 +88,7 @@ export default function Compromiso() {
 
                 {/* Title */}
 
-                <h3 className="type-h3 mt-8 text-[#07182D] dark:text-white">
+                <h3 className="type-h3 mt-8 text-brand-navy dark:text-white">
                   {item.title}
                 </h3>
 
@@ -117,7 +117,7 @@ export default function Compromiso() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-24 rounded-3xl border border-brand-red-500/15 bg-gradient-to-r from-[#07182D] via-[#0B2545] to-[#07182D] p-10 text-center elev-3"
+          className="mt-24 rounded-3xl border border-brand-red-500/15 bg-gradient-to-r from-brand-ink via-[#0B2545] to-brand-ink p-10 text-center elev-3"
         >
           <h3 className="type-h3 text-white">{t.testimonios.bottomTitle}</h3>
 

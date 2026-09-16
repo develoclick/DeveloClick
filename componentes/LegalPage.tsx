@@ -15,12 +15,12 @@ export default function LegalPage({
     variant === "privacy" ? legal.privacySections : legal.termsSections;
 
   return (
-    <section className="relative w-full bg-white dark:bg-[#07182d] py-24 transition-colors duration-300">
+    <section className="relative w-full bg-white dark:bg-brand-ink py-24 transition-colors duration-300">
       <div className="mx-auto max-w-3xl px-6">
         <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
           {legal.updated}
         </p>
-        <h1 className="type-display mt-4 text-[#07182D] dark:text-white">
+        <h1 className="type-display mt-4 text-brand-navy dark:text-white">
           {title}
         </h1>
         <p className="mt-5 text-base leading-relaxed text-slate-500 dark:text-slate-400">
@@ -30,7 +30,7 @@ export default function LegalPage({
         <div className="mt-12 space-y-10">
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="type-h2 text-[#07182D] dark:text-white">
+              <h2 className="type-h2 text-brand-navy dark:text-white">
                 {section.heading}
               </h2>
               <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">

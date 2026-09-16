@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -10,16 +9,10 @@ import {
   animate,
   Variants,
 } from "framer-motion";
-import {
-  ArrowUpRight,
-  CheckCircle2,
-  Zap,
-  ChevronDown,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Zap, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
+import HeroCollage from "@/componentes/home/HeroCollage";
 
 /**
  * Contador que cuenta hasta su valor.
@@ -58,7 +51,7 @@ function AnimatedStat({
 
   return (
     <div className="flex flex-col items-start">
-      <p className="text-2xl sm:text-3xl font-black text-[#07182D] dark:text-white tabular-nums">
+      <p className="text-2xl sm:text-3xl font-black text-brand-navy dark:text-white tabular-nums">
         {Math.round(mostrado)}
         {suffix}
       </p>
@@ -83,7 +76,7 @@ export default function HeroDeveloclickBusiness() {
   const spotlightBackground = useTransform(
     [mouseX, mouseY],
     ([x, y]) =>
-      `radial-gradient(600px circle at ${x}px ${y}px, rgba(230,57,70,0.12), transparent 70%)`,
+      `radial-gradient(600px circle at ${x}px ${y}px, rgba(189,31,35,0.12), transparent 70%)`,
   );
 
   const containerVariants: Variants = {
@@ -112,7 +105,7 @@ export default function HeroDeveloclickBusiness() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative isolate w-full min-h-screen overflow-hidden bg-white dark:bg-[#07182d] text-slate-900 pt-28 pb-20 transition-colors duration-300 lg:pt-36 font-sans"
+      className="relative isolate w-full min-h-screen overflow-hidden bg-white dark:bg-brand-ink text-slate-900 pt-28 pb-20 transition-colors duration-300 lg:pt-36 font-sans"
     >
       {/* Mouse-tracking spotlight */}
       <motion.div
@@ -142,7 +135,7 @@ export default function HeroDeveloclickBusiness() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-1/3 -right-24 h-[26rem] w-[26rem] rounded-full bg-[#07182D]/10 dark:bg-cyan-400/10 blur-[110px]"
+          className="absolute top-1/3 -right-24 h-[26rem] w-[26rem] rounded-full bg-brand-ink/10 dark:bg-cyan-400/10 blur-[110px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{
             duration: 9,
@@ -177,7 +170,7 @@ export default function HeroDeveloclickBusiness() {
             {/* Título de alto impacto comercial */}
             <motion.h1
               variants={itemVariants}
-              className="type-display text-[#07182D] dark:text-white"
+              className="type-display text-brand-navy dark:text-white"
             >
               {t.hero.titleLine1}{" "}
               <span className="text-brand-red-600 dark:text-brand-red-400">
@@ -220,8 +213,8 @@ export default function HeroDeveloclickBusiness() {
               className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             >
               <Link
-                href="/contacto"
-                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-brand-red-600 px-8 py-4 text-sm sm:text-base font-bold text-white tracking-[0.18em] shadow-lg shadow-brand-red-600/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c1303b] hover:elev-3 hover:shadow-brand-red-600/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-600"
+                href="/contacto#cotizador"
+                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-brand-red-600 px-8 py-4 text-sm sm:text-base font-bold text-white tracking-[0.18em] shadow-lg shadow-brand-red-600/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red-700 hover:elev-3 hover:shadow-brand-red-600/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-600"
               >
                 <span>{t.hero.ctaPrimary}</span>
                 <ArrowUpRight
@@ -231,7 +224,7 @@ export default function HeroDeveloclickBusiness() {
               </Link>
 
               <Link
-                href="/nosotros"
+                href="/servicios"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/15 px-6 py-4 text-sm sm:text-base font-bold text-slate-800 dark:text-white tracking-[0.18em] transition-all duration-300 hover:bg-slate-50 dark:hover:bg-white/10 hover:border-slate-300"
               >
                 <span>{t.hero.ctaSecondary}</span>
@@ -254,73 +247,10 @@ export default function HeroDeveloclickBusiness() {
             </motion.div>
           </div>
 
-          {/* Columna Derecha: Imagen que sobresale del contenedor */}
-          <div className="lg:col-span-5 flex flex-col justify-center items-center overflow-visible">
-            <motion.div
-              variants={itemVariants}
-              className="relative grid w-full overflow-visible"
-            >
-              <div className="relative w-full h-full aspect-[4/3] backdrop-blur-md overflow-visible flex items-center justify-center">
-                {/* Contenedor que permite que la imagen sobresalga */}
-                <div className="relative w-full h-full rounded-xl overflow-visible bg-slate-100/50 dark:bg-white/5">
-                  <Image
-                    src="/imagenes/diseño.png"
-                    alt="Diseño Develoclick Business"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    priority
-                    className="object-contain object-center scale-125 lg:scale-135 "
-                  />
-                </div>
-
-                {/* Floating glass cards */}
-                <motion.div
-                  className="absolute -left-6 top-6 z-20 hidden sm:flex items-center gap-2 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-[#0A192F]/80 px-4 py-3 elev-3 backdrop-blur-xl"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 4.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <ShieldCheck
-                    size={18}
-                    className="text-emerald-500 shrink-0"
-                  />
-                  <div>
-                    <p className="text-xs font-bold text-[#07182D] dark:text-white leading-tight">
-                      {t.hero.floatingBadge2Title}
-                    </p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
-                      {t.hero.floatingBadge2Text}
-                    </p>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -right-4 bottom-8 z-20 hidden sm:flex items-center gap-2 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-[#0A192F]/80 px-4 py-3 elev-3 backdrop-blur-xl"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.8,
-                  }}
-                >
-                  <Sparkles
-                    size={18}
-                    className="text-brand-red-600 dark:text-brand-red-400 shrink-0"
-                  />
-                  <div>
-                    <p className="text-xs font-bold text-[#07182D] dark:text-white leading-tight">
-                      {t.hero.floatingBadgeTitle}
-                    </p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
-                      {t.hero.floatingBadgeText}
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
+          {/* Columna derecha: collage fotográfico con parallax */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+            <motion.div variants={itemVariants} className="w-full">
+              <HeroCollage />
             </motion.div>
 
             <motion.p
@@ -361,7 +291,7 @@ export default function HeroDeveloclickBusiness() {
           className="relative block w-full h-24 lg:h-40"
         >
           <path
-            fill="#07182D"
+            className="fill-brand-ink"
             d="M0,96
  C180,180 360,20 540,80
  C720,140 900,180 1080,110

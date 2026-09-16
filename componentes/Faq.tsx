@@ -1,70 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import Accordion from "@/componentes/ui/Accordion";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
 
-export type FaqItem = { question: string; answer: string };
-
+/** FAQ de precios. Los textos también alimentan el JSON-LD FAQPage de /precios. */
 export default function Faq() {
   const { t } = useLanguage();
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-[#07182d] py-24 transition-colors duration-300 lg:py-32">
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="text-center">
-          <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
-            {t.faq.eyebrow}
-          </p>
-          <h2 className="type-h2 mt-4 text-[#07182D] dark:text-white">
-            {t.faq.title}
-          </h2>
-        </div>
-
-        <div className="mt-12 space-y-3">
-          {t.faq.items.map((item, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={item.question}
-                className="overflow-hidden rounded-3xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/[0.02]"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-sm font-bold text-[#07182D] dark:text-white sm:text-base">
-                    {item.question}
-                  </span>
-                  <ChevronDown
-                    size={18}
-                    className={`shrink-0 text-brand-red-600 dark:text-brand-red-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-6 pb-5 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    <Accordion
+      eyebrow={t.faq.eyebrow}
+      title={t.faq.title}
+      items={t.faq.items.map((i) => ({ q: i.question, a: i.answer }))}
+    />
   );
 }

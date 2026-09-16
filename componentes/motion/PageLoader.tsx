@@ -76,7 +76,7 @@ export default function PageLoader() {
           aria-hidden
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="dc-intro-overlay fixed inset-0 z-[200] items-center justify-center bg-white dark:bg-brand-navy"
+          className="dc-intro-overlay fixed inset-0 z-[200] items-center justify-center bg-white dark:bg-brand-ink"
         >
           <div className="flex flex-col items-center">
             <motion.div

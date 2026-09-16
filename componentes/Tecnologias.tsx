@@ -19,7 +19,7 @@ const longTechnologySet = [...technologies, ...technologies];
 function TechnologySet({ hidden = false }: { hidden?: boolean }) {
   return (
     <div
-      className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 bg-[#07182d]"
+      className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 bg-brand-ink"
       aria-hidden={hidden}
     >
       {longTechnologySet.map((tech, index) => (
@@ -45,7 +45,7 @@ export default function Tecnologias() {
   const { t } = useLanguage();
   return (
     <section
-      className="overflow-hidden bg-[#07182d] py-6"
+      className="overflow-hidden bg-brand-ink py-6"
       aria-label={t.tecnologias.heading}
     >
       {/* Encabezado sutil */}

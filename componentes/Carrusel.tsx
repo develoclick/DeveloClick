@@ -4,17 +4,19 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, MonitorSmartphone, Quote } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
+import { fotos } from "@/lib/images";
 
+/** Mismo orden que `t.carrusel.slides`. */
 const slideImages = [
-  "/imagenes/equipo-corporativo.jpg",
-  "/imagenes/moderno.jpg",
-  "/imagenes/transformacion.png",
-  "/imagenes/diseño.png",
-  "/imagenes/automatizacion.jpg",
+  fotos.conectividad,
+  fotos.desarrolloEquipo,
+  fotos.saas,
+  fotos.disenoUx,
+  fotos.integraciones,
 ];
 
 export default function Carrusel() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const slides = t.carrusel.slides.map((slide, index) => ({
     ...slide,
     image: slideImages[index],
@@ -49,7 +51,7 @@ export default function Carrusel() {
 
   return (
     <section
-      className="bg-white py-24 dark:bg-[#07182d] lg:py-32"
+      className="bg-white py-24 dark:bg-brand-ink lg:py-32"
       aria-label={t.carrusel.eyebrow}
     >
       <div className="mx-auto max-w-7xl px-6">
@@ -59,7 +61,7 @@ export default function Carrusel() {
               {t.carrusel.eyebrow}
             </p>
 
-            <h2 className="type-h2 mt-3 text-[#0A192F] dark:text-white">
+            <h2 className="type-h2 mt-3 text-brand-navy-800 dark:text-white">
               {t.carrusel.title}
             </h2>
           </div>
@@ -78,14 +80,14 @@ export default function Carrusel() {
               type="button"
               onClick={() => changeSlide(1)}
               aria-label={t.carrusel.next}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0A192F] text-white transition hover:bg-brand-red-600"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy-800 text-white transition hover:bg-brand-red-600"
             >
               <ArrowRight size={18} />
             </button>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-3xl bg-[#0A192F] elev-3">
+        <div className="overflow-hidden rounded-3xl bg-brand-navy-800 elev-3">
           <div
             key={activeSlide}
             className="grid min-h-[460px] animate-in fade-in duration-500 lg:grid-cols-2"
@@ -93,14 +95,15 @@ export default function Carrusel() {
             <div className="relative order-2 min-h-[280px] lg:order-1">
               <Image
                 key={activeSlide}
-                src={slide.image}
-                alt={slide.imageAlt}
+                src={slide.image.src}
+                alt={slide.image.alt[lang]}
                 fill
+                placeholder="blur"
                 sizes="(max-width:1024px)100vw,50vw"
                 className="object-cover transition duration-700"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-800/40 to-transparent" />
             </div>
 
             <div className="order-1 flex flex-col justify-between p-8 text-white sm:p-12 lg:order-2 lg:p-14">

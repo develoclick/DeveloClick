@@ -49,8 +49,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: `${SITE_URL}${post.cover}`,
-          width: 1200,
-          height: 630,
           alt: post.coverAlt,
         },
       ],
@@ -135,7 +133,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <div
         id="article-body"
-        className="bg-white dark:bg-[#07182d] pb-8 transition-colors duration-300"
+        className="bg-white dark:bg-brand-ink pb-8 transition-colors duration-300"
       >
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 pt-12 lg:grid-cols-[1fr_240px]">
           <article className="min-w-0">
@@ -168,15 +166,15 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#07182d] pt-6 transition-colors duration-300">
+      <div className="bg-white dark:bg-brand-ink pt-6 transition-colors duration-300">
         <CTAArticle />
       </div>
 
-      <div className="bg-white dark:bg-[#07182d] transition-colors duration-300">
+      <div className="bg-white dark:bg-brand-ink transition-colors duration-300">
         <RelatedArticles posts={related} />
       </div>
 
-      <div className="bg-white dark:bg-[#07182d] pb-20 transition-colors duration-300">
+      <div className="bg-white dark:bg-brand-ink pb-20 transition-colors duration-300">
         <NewsletterSection />
       </div>
 

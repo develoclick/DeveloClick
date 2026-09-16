@@ -26,7 +26,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="flex min-h-screen items-center bg-white transition-colors duration-300 dark:bg-brand-navy">
+    <main className="flex min-h-screen items-center bg-white transition-colors duration-300 dark:bg-brand-ink">
       <div className="mx-auto w-full max-w-xl px-6 text-center">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-brand-red-500/10 text-brand-red-600 dark:text-brand-red-400">
           <AlertTriangle size={28} />
@@ -52,7 +52,7 @@ export default function Error({
           <button
             type="button"
             onClick={reset}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white elev-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c1303b] sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-7 py-4 text-sm font-bold text-white elev-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red-700 sm:w-auto"
           >
             <RotateCcw size={16} />
             Reintentar

@@ -53,7 +53,7 @@ export default function ArticleCard({
           className="object-cover transition duration-700 group-hover:scale-105"
         />
         <div className="absolute left-4 top-4">
-          <span className="inline-flex items-center rounded-full bg-white/90 dark:bg-[#07182d]/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-red-600 dark:text-brand-red-400 elev-2 backdrop-blur-md">
+          <span className="inline-flex items-center rounded-full bg-white/90 dark:bg-brand-ink/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-red-600 dark:text-brand-red-400 elev-2 backdrop-blur-md">
             {post.category}
           </span>
         </div>
@@ -71,7 +71,7 @@ export default function ArticleCard({
         </div>
 
         <h3
-          className={`type-h3 mt-3 text-[#07182D] dark:text-white transition-colors group-hover:text-brand-red-600 dark:hover:text-brand-red-400 ${featured ? " " : ""}`}
+          className={`type-h3 mt-3 text-brand-navy dark:text-white transition-colors group-hover:text-brand-red-600 dark:hover:text-brand-red-400 ${featured ? " " : ""}`}
         >
           {post.title}
         </h3>

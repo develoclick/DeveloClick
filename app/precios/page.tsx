@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Navbar from "@/componentes/Navbar";
-import PreciosHero from "@/componentes/PreciosHero";
+import PreciosContenido, {
+  PreciosHeroSeccion,
+} from "@/componentes/precios/PreciosContenido";
 import PreciosPlanes from "@/componentes/PreciosPlanes";
 import Faq from "@/componentes/Faq";
 import ProyectoCta from "@/componentes/ProyectoCta";
 import Footer from "@/componentes/Footer";
+import BreadcrumbJsonLd from "@/componentes/ui/BreadcrumbJsonLd";
 import { dictionary } from "@/componentes/i18n/dictionary";
 
 export const metadata: Metadata = {
@@ -29,14 +32,16 @@ const faqJsonLd = {
 
 export default function Precios() {
   return (
-    <main className="pt-20">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <BreadcrumbJsonLd name="Precios" path="/precios" />
       <Navbar />
-      <PreciosHero />
+      <PreciosHeroSeccion />
       <PreciosPlanes />
+      <PreciosContenido />
       <Faq />
       <ProyectoCta />
       <Footer />

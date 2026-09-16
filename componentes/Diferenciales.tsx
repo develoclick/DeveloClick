@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import { fotos } from "@/lib/images";
+
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -62,8 +65,15 @@ export default function DiferencialesRediseñado() {
         >
           {/* Fondo con imagen y overlay degradado */}
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-[url('/imagenes/equipo-corporativo.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07182D] via-[#07182D]/90 to-transparent" />
+            <Image
+              src={fotos.estrategiaCrecimiento.src}
+              alt=""
+              fill
+              placeholder="blur"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="scale-105 object-cover opacity-30 mix-blend-luminosity"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/90 to-transparent" />
           </div>
 
           <div className="relative z-10 max-w-2xl">
@@ -137,7 +147,7 @@ export default function DiferencialesRediseñado() {
             <div className="mt-8">
               <a
                 href="/contacto"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-3xl bg-white px-6 py-4 text-sm font-bold text-[#07182D] elev-2 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-3xl bg-white px-6 py-4 text-sm font-bold text-brand-navy elev-2 transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 {t.diferenciales.ctaButton} <ArrowRight size={16} />
               </a>

@@ -23,7 +23,7 @@ export default function BlogSearch({
         onChange={(e) => onChange(e.target.value)}
         placeholder="Busca por título, categoría o tema..."
         aria-label="Buscar artículos"
-        className="w-full rounded-3xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.04] py-4 pl-12 pr-12 text-sm text-[#07182D] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 elev-1 outline-none transition focus:border-brand-red-600 focus:ring-2 focus:ring-brand-red-500/15"
+        className="w-full rounded-3xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.04] py-4 pl-12 pr-12 text-sm text-brand-navy dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 elev-1 outline-none transition focus:border-brand-red-600 focus:ring-2 focus:ring-brand-red-500/15"
       />
       {value && (
         <button

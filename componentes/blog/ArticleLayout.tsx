@@ -32,7 +32,7 @@ export default function ArticleLayout({
   coverAlt: string;
 }) {
   return (
-    <header className="relative w-full bg-white dark:bg-[#07182d] pt-8 transition-colors duration-300">
+    <header className="relative w-full bg-white dark:bg-brand-ink pt-8 transition-colors duration-300">
       <div className="mx-auto max-w-4xl px-6">
         <nav
           aria-label="Breadcrumb"
@@ -59,12 +59,12 @@ export default function ArticleLayout({
           {category}
         </span>
 
-        <h1 className="type-display mt-5 text-[#07182D] dark:text-white">
+        <h1 className="type-display mt-5 text-brand-navy dark:text-white">
           {title}
         </h1>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-100 dark:border-white/10 pb-8 text-sm text-slate-500 dark:text-slate-400">
-          <span className="flex items-center gap-2 font-semibold text-[#07182D] dark:text-white">
+          <span className="flex items-center gap-2 font-semibold text-brand-navy dark:text-white">
             <User
               size={15}
               className="text-brand-red-600 dark:text-brand-red-400"
@@ -91,7 +91,7 @@ export default function ArticleLayout({
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07182D]/30 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/30 via-transparent to-transparent" />
         </div>
       </div>
     </header>

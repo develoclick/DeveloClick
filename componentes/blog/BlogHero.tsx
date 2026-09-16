@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, Sparkles, TrendingUp } from "lucide-react";
 
 export default function BlogHero() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-white dark:bg-[#07182d] pt-28 pb-24 transition-colors duration-300 lg:pt-36 lg:pb-32">
+    <section className="relative isolate w-full overflow-hidden bg-white dark:bg-brand-ink pt-28 pb-24 transition-colors duration-300 lg:pt-36 lg:pb-32">
       {/* Fondo: grid + orbes + blur */}
       <div
         aria-hidden
@@ -28,7 +28,7 @@ export default function BlogHero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-10 right-1/5 h-[22rem] w-[22rem] rounded-full bg-[#07182D]/10 dark:bg-cyan-400/10 blur-[100px]"
+          className="absolute top-10 right-1/5 h-[22rem] w-[22rem] rounded-full bg-brand-ink/10 dark:bg-cyan-400/10 blur-[100px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{
             duration: 9,
@@ -57,7 +57,7 @@ export default function BlogHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="type-display mt-7 text-[#07182D] dark:text-white"
+          className="type-display mt-7 text-brand-navy dark:text-white"
         >
           Conocimiento que{" "}
           <span className="text-brand-red-600 dark:text-brand-red-400">
@@ -83,7 +83,7 @@ export default function BlogHero() {
         >
           <Link
             href="#articulos"
-            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-brand-red-600/25 transition-all duration-300 hover:bg-[#cf2e3b] hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-red-600 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-brand-red-600/25 transition-all duration-300 hover:bg-brand-red-700 hover:-translate-y-0.5"
           >
             Explorar artículos
             <ArrowRight
@@ -113,11 +113,11 @@ export default function BlogHero() {
                 delay: 0.4,
               },
             }}
-            className="flex items-center gap-3 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-[#0A192F]/80 px-5 py-4 elev-3 backdrop-blur-xl"
+            className="flex items-center gap-3 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-brand-navy-800/80 px-5 py-4 elev-3 backdrop-blur-xl"
           >
             <TrendingUp size={20} className="text-emerald-500" />
             <div className="text-left">
-              <p className="text-sm font-bold text-[#07182D] dark:text-white leading-tight">
+              <p className="text-sm font-bold text-brand-navy dark:text-white leading-tight">
                 Guías accionables
               </p>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight">
@@ -138,14 +138,14 @@ export default function BlogHero() {
                 delay: 0.8,
               },
             }}
-            className="flex items-center gap-3 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-[#0A192F]/80 px-5 py-4 elev-3 backdrop-blur-xl"
+            className="flex items-center gap-3 rounded-3xl border border-white/60 dark:border-white/10 bg-white/80 dark:bg-brand-navy-800/80 px-5 py-4 elev-3 backdrop-blur-xl"
           >
             <Sparkles
               size={20}
               className="text-brand-red-600 dark:text-brand-red-400"
             />
             <div className="text-left">
-              <p className="text-sm font-bold text-[#07182D] dark:text-white leading-tight">
+              <p className="text-sm font-bold text-brand-navy dark:text-white leading-tight">
                 Casos reales
               </p>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight">

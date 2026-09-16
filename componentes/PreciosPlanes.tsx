@@ -11,7 +11,10 @@ export default function PreciosPlanes() {
   const periods = [pp.perProject, pp.perProject, pp.custom];
 
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-[#07182d] py-24 transition-colors duration-300 lg:py-32">
+    <section
+      id="planes"
+      className="relative w-full scroll-mt-24 overflow-hidden bg-white dark:bg-brand-ink py-24 transition-colors duration-300 lg:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {pp.plans.map((plan, index) => {
@@ -25,8 +28,8 @@ export default function PreciosPlanes() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative flex flex-col rounded-3xl p-8 sm:p-10 transition-all duration-300 ${
                   highlighted
-                    ? "bg-[#07182D] text-white shadow-2xl shadow-[#07182D]/30 lg:-translate-y-4"
-                    : "bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/10 text-[#07182D] dark:text-white elev-1"
+                    ? "bg-brand-ink text-white shadow-2xl shadow-brand-ink/30 lg:-translate-y-4"
+                    : "bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/10 text-brand-navy dark:text-white elev-1"
                 }`}
               >
                 {highlighted && (
@@ -79,11 +82,11 @@ export default function PreciosPlanes() {
                 </ul>
 
                 <Link
-                  href="/#cotizador"
+                  href="/contacto#cotizador"
                   className={`mt-9 inline-flex items-center justify-center gap-2 rounded-3xl px-6 py-4 text-sm font-bold transition-all hover:-translate-y-0.5 ${
                     highlighted
-                      ? "bg-brand-red-600 text-white shadow-lg shadow-brand-red-600/25 hover:bg-[#cf2e3b]"
-                      : "bg-slate-50 dark:bg-white/5 text-[#07182D] dark:text-white hover:bg-slate-100 dark:hover:bg-white/10"
+                      ? "bg-brand-red-600 text-white shadow-lg shadow-brand-red-600/25 hover:bg-brand-red-700"
+                      : "bg-slate-50 dark:bg-white/5 text-brand-navy dark:text-white hover:bg-slate-100 dark:hover:bg-white/10"
                   }`}
                 >
                   {pp.cta}
@@ -96,7 +99,7 @@ export default function PreciosPlanes() {
         <p className="mt-10 text-center text-sm text-slate-500 dark:text-slate-400">
           {pp.footerNote}{" "}
           <Link
-            href="/#cotizador"
+            href="/contacto#cotizador"
             className="font-semibold text-brand-red-600 dark:text-brand-red-400 hover:underline"
           >
             {pp.footerLink}

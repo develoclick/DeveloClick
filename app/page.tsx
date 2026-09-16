@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Navbar from "@/componentes/Navbar";
 import Hero from "@/componentes/Hero";
-import Carrusel from "@/componentes/Carrusel";
 import Tecnologias from "@/componentes/Tecnologias";
-import ServiciosDestacados from "@/componentes/ServiciosDestacados";
-import ServiciosGrid from "@/componentes/ServiciosGrid";
-import Diferenciales from "@/componentes/Diferenciales";
-import Testimonios from "@/componentes/Testimonios";
-import Proceso from "@/componentes/Proceso";
-import Cotizador from "@/componentes/Cotizador";
+import ServiciosPreview from "@/componentes/home/ServiciosPreview";
+import MarcaGaleria from "@/componentes/home/MarcaGaleria";
+import ProcesoPreview from "@/componentes/home/ProcesoPreview";
+import NosotrosPreview from "@/componentes/home/NosotrosPreview";
+import PreciosPreview from "@/componentes/home/PreciosPreview";
+import BlogPreview from "@/componentes/home/BlogPreview";
 import ProyectoCta from "@/componentes/ProyectoCta";
 import Footer from "@/componentes/Footer";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "DeveloClick — Desarrollo web, software a medida y plataformas SaaS",
@@ -19,21 +19,39 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * Home: resume cada ruta del navbar y lleva a ella para profundizar.
+ * Orden pensado para conversión: promesa → qué hacemos → cómo → quiénes →
+ * cuánto cuesta → autoridad (blog) → acción.
+ */
 export default function Home() {
+  const posts = getAllPosts()
+    .slice(0, 3)
+    .map(
+      ({ slug, title, excerpt, cover, coverAlt, category, readingTime }) => ({
+        slug,
+        title,
+        excerpt,
+        cover,
+        coverAlt,
+        category,
+        readingTime,
+      }),
+    );
+
   return (
-    <div>
+    <main>
       <Navbar />
       <Hero />
       <Tecnologias />
-      <ServiciosDestacados />
-      <Carrusel />
-      <ServiciosGrid />
-      <Diferenciales />
-      <Testimonios />
-      <Proceso />
-      <Cotizador />
+      <ServiciosPreview />
+      <MarcaGaleria />
+      <ProcesoPreview />
+      <NosotrosPreview />
+      <PreciosPreview />
+      <BlogPreview posts={posts} />
       <ProyectoCta />
       <Footer />
-    </div>
+    </main>
   );
 }

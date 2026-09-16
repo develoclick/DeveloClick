@@ -5,13 +5,13 @@ export const mdxComponents: MDXComponents = {
   h2: (props) => (
     <h2
       {...props}
-      className="type-h2 mt-12 scroll-mt-28 text-[#07182D] dark:text-white"
+      className="type-h2 mt-12 scroll-mt-28 text-brand-navy dark:text-white"
     />
   ),
   h3: (props) => (
     <h3
       {...props}
-      className="type-h3 mt-8 scroll-mt-28 text-[#07182D] dark:text-white"
+      className="type-h3 mt-8 scroll-mt-28 text-brand-navy dark:text-white"
     />
   ),
   p: (props) => (
@@ -28,7 +28,7 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   strong: (props) => (
-    <strong {...props} className="font-bold text-[#07182D] dark:text-white" />
+    <strong {...props} className="font-bold text-brand-navy dark:text-white" />
   ),
   ul: (props) => (
     <ul
@@ -46,7 +46,7 @@ export const mdxComponents: MDXComponents = {
   blockquote: (props) => (
     <blockquote
       {...props}
-      className="mt-8 rounded-3xl border-l-4 border-brand-red-600 bg-slate-50 dark:bg-white/5 px-6 py-5 text-lg font-medium italic leading-relaxed text-[#07182D] dark:text-white"
+      className="mt-8 rounded-3xl border-l-4 border-brand-red-600 bg-slate-50 dark:bg-white/5 px-6 py-5 text-lg font-medium italic leading-relaxed text-brand-navy dark:text-white"
     />
   ),
   hr: () => <hr className="my-10 border-slate-200 dark:border-white/10" />,

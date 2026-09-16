@@ -3,36 +3,47 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-
   --font-sans: var(--font-inter);
-
   --font-display: var(--font-space);
+  /* Tipografía del logo: geométrica cuadrada extendida. Solo para acentos
+     (etiquetas, cifras, numeración): en titulares largos pierde legibilidad. */
+  --font-brand: var(--font-orbitron);
 
-  /* ---- Paleta de marca (misma familia, contraste corregido a WCAG AA) ---- */
-  /* Navy: sin cambios, 17.83:1 sobre blanco */
-  --color-brand-navy: #07182d;
-  --color-brand-navy-800: #0a192f;
-  --color-brand-navy-700: #13375f;
+  /* ---- Paleta tomada del logo (promedio medido de sus píxeles) ---- */
+  /* Navy del logo #132441 — 15.5:1 sobre blanco */
+  --color-brand-navy: #132441;
+  --color-brand-navy-800: #0e1c34;
+  --color-brand-navy-700: #1d3561;
+  /* Fondo profundo (modo oscuro y secciones de contraste), mismo tono */
+  --color-brand-ink: #0a1526;
 
-  /* Rojo: #E63946 fallaba AA (4.17:1). 600 es el mismo rojo 8% más oscuro -> 4.81:1 AA */
-  --color-brand-red-600: #d43440; /* texto sobre blanco + fondo de botón con texto blanco */
-  --color-brand-red-500: #e63946; /* solo decorativo: glows, bordes, fondos translúcidos */
-  --color-brand-red-400: #ed6c76; /* rojo sobre navy: 5.95:1 puro / 4.84:1 superficies elevadas -> AA */
+  /* Rojo del logo #BD1F23 — 6.2:1 sobre blanco: vale para texto y botones */
+  --color-brand-red-700: #9e1a1d; /* hover de botones */
+  --color-brand-red-600: #bd1f23; /* texto sobre blanco + fondo de botón */
+  --color-brand-red-500: #d8282d; /* solo decorativo: glows, bordes */
+  --color-brand-red-400: #f27479; /* rojo sobre navy/ink: 5.6:1 y 6.6:1 -> AA */
 
   /* ---- Escala de espaciado (múltiplos de 8) ---- */
-  --spacing-section: 6rem;    /* 96px  */
-  --spacing-section-lg: 8rem; /* 128px */
+  --spacing-section: 6rem;
+  --spacing-section-lg: 8rem;
 }
 
-button,
-input,
-textarea,
-select,
-a {
-  font-family: var(--font-inter);
-}
-body {
-  font-family: var(--font-inter);
+/* Base tipográfica en @layer base: así las utilidades (font-display,
+   font-brand...) pueden sobrescribirla. Sin capa, estas reglas ganaban a
+   cualquier clase de Tailwind y los botones nunca usaban su tipografía. */
+@layer base {
+  body,
+  p,
+  button,
+  input,
+  textarea,
+  select,
+  a {
+    font-family: var(--font-inter);
+  }
+  [id] {
+    scroll-margin-top: 6.5rem;
+  }
 }
 
 /* ============================================================
@@ -79,14 +90,12 @@ body {
   letter-spacing: normal;
 }
 .type-eyebrow {
-  font-size: 0.75rem;
+  font-family: var(--font-orbitron);
+  font-size: 0.72rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-}
-p {
-  font-family: var(--font-inter);
 }
 @keyframes marquee-left {
   from {
@@ -211,7 +220,7 @@ p {
 }
 
 /* Área táctil mínima 44x44 sin alterar el tamaño visual del control */
-@media (pointer: coarse), (max-width: 1023px) {
+@media (pointer: coarse), (max-width: 1279px) {
   :where(nav a, nav button, footer a, .tap-target) {
     position: relative;
   }
@@ -228,12 +237,18 @@ p {
 /* ============================================================
    JERARQUÍA DE ELEVACIÓN — 3 niveles, no una sombra repetida
    ============================================================ */
-.elev-1 { box-shadow: 0 1px 2px rgb(7 24 45 / 0.04), 0 2px 8px rgb(7 24 45 / 0.04); }
-.elev-2 { box-shadow: 0 4px 12px rgb(7 24 45 / 0.08), 0 12px 28px rgb(7 24 45 / 0.06); }
-.elev-3 { box-shadow: 0 12px 32px rgb(7 24 45 / 0.14), 0 32px 64px rgb(7 24 45 / 0.10); }
-.dark .elev-1 { box-shadow: 0 1px 2px rgb(0 0 0 / 0.30); }
-.dark .elev-2 { box-shadow: 0 8px 24px rgb(0 0 0 / 0.40); }
-.dark .elev-3 { box-shadow: 0 20px 48px rgb(0 0 0 / 0.55); }
+@utility elev-1 {
+  box-shadow: 0 1px 2px rgb(19 36 65 / 0.04), 0 2px 8px rgb(19 36 65 / 0.05);
+  .dark & { box-shadow: 0 1px 2px rgb(0 0 0 / 0.30); }
+}
+@utility elev-2 {
+  box-shadow: 0 4px 12px rgb(19 36 65 / 0.08), 0 12px 28px rgb(19 36 65 / 0.07);
+  .dark & { box-shadow: 0 8px 24px rgb(0 0 0 / 0.40); }
+}
+@utility elev-3 {
+  box-shadow: 0 12px 32px rgb(19 36 65 / 0.14), 0 32px 64px rgb(19 36 65 / 0.10);
+  .dark & { box-shadow: 0 20px 48px rgb(0 0 0 / 0.55); }
+}
 
 /* Respeto de prefers-reduced-motion en todo el sitio */
 @media (prefers-reduced-motion: reduce) {
@@ -279,29 +294,29 @@ html.dark {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #eef1f5;
+  background: #eef1f6;
 }
 ::-webkit-scrollbar-thumb {
   background: #c3ccd8;
   border-radius: 999px;
   /* El borde del color de la pista adelgaza visualmente el pulgar sin
      reducir el área real de arrastre. */
-  border: 2px solid #eef1f5;
+  border: 2px solid #eef1f6;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-red-600);
 }
 ::-webkit-scrollbar-corner {
-  background: #eef1f5;
+  background: #eef1f6;
 }
 
 html.dark ::-webkit-scrollbar-track,
 html.dark ::-webkit-scrollbar-corner {
-  background: #0a192f;
+  background: #0a1526;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #274056;
-  border-color: #0a192f;
+  border-color: #0a1526;
 }
 html.dark ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-red-400);
@@ -312,4 +327,24 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 .tw::-webkit-scrollbar-track,
 [class*="overflow-x-auto"]::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* ============================================================
+   ACENTOS DE MARCA Y NAVEGACIÓN POR ANCLAS
+   ============================================================ */
+@utility font-brand {
+  font-family: var(--font-orbitron);
+  letter-spacing: 0.04em;
+}
+
+/* Las anclas (#cotizador, #web...) no quedan tapadas por el navbar fijo:
+   ver [id] en @layer base. */
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Transforms ligados a scroll o puntero (parallax, tilt): con movimiento
+   reducido se congelan. !important gana al estilo inline que escribe Framer. */
+@media (prefers-reduced-motion: reduce) {
+  .rm-static { transform: none !important; }
 }

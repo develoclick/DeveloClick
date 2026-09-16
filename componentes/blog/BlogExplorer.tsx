@@ -56,7 +56,7 @@ export default function BlogExplorer({
           <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
             Categorías
           </p>
-          <h2 className="type-h2 mt-3 text-[#07182D] dark:text-white">
+          <h2 className="type-h2 mt-3 text-brand-navy dark:text-white">
             Explora por tema.
           </h2>
         </div>
@@ -87,7 +87,7 @@ export default function BlogExplorer({
             <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
               {activeCategory ? activeCategory : "Todos los artículos"}
             </p>
-            <h2 className="type-h2 mt-3 text-[#07182D] dark:text-white">
+            <h2 className="type-h2 mt-3 text-brand-navy dark:text-white">
               {activeCategory
                 ? `Artículos sobre ${activeCategory}`
                 : "Biblioteca completa."}

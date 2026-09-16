@@ -3,6 +3,7 @@ export const dictionary = {
     nav: {
       inicio: "Inicio",
       servicios: "Servicios",
+      proceso: "Proceso",
       nosotros: "Nosotros",
       precios: "Precios",
       contacto: "Contacto",
@@ -23,10 +24,10 @@ export const dictionary = {
         "Desarrollo a la medida de tus objetivos",
         "Enfoque absoluto en conversión y ROI",
         "Cero dolores de cabeza técnicos",
-        "Soporte y escalabilidad garantizada",
+        "Soporte y escalabilidad desde el diseño",
       ],
-      ctaPrimary: "Agendar consulta estratégica",
-      ctaSecondary: "Ver resultados",
+      ctaPrimary: "Cotizar mi proyecto",
+      ctaSecondary: "Ver servicios",
       scrollHint: "Descubre más",
       // Compromisos verificables que dependen de nosotros, no cifras de
       // historial que no podemos demostrar ante un cliente que las pida.
@@ -53,7 +54,8 @@ export const dictionary = {
         "Desde una landing page hasta una plataforma SaaS completa. Cubrimos cada etapa del ciclo digital de tu negocio.",
       cardEyebrow: "Equipos de trabajo",
       cardTitle: "Ingeniería y diseño, trabajando como uno solo.",
-      cardParagraph: "Un equipo multidisciplinario enfocado en crear productos digitales de alto impacto.",
+      cardParagraph:
+        "Un equipo multidisciplinario enfocado en crear productos digitales de alto impacto.",
       imageAlt: "Equipo de desarrollo trabajando en una solución digital",
     },
     carrusel: {
@@ -117,33 +119,41 @@ export const dictionary = {
       services: {
         web: {
           title: "Webs profesionales",
-          description: "Sitios web rápidos, elegantes y optimizados para conversión.",
-          detail: "Diseñamos experiencias web que comunican valor, generan confianza y convierten visitas en oportunidades reales.",
+          description:
+            "Sitios web rápidos, elegantes y optimizados para conversión.",
+          detail:
+            "Diseñamos experiencias web que comunican valor, generan confianza y convierten visitas en oportunidades reales.",
         },
         software: {
           title: "Software a medida",
-          description: "Soluciones tecnológicas diseñadas para tus procesos únicos.",
-          detail: "Construimos software robusto y modular que se adapta a la forma en que tu negocio ya trabaja.",
+          description:
+            "Soluciones tecnológicas diseñadas para tus procesos únicos.",
+          detail:
+            "Construimos software robusto y modular que se adapta a la forma en que tu negocio ya trabaja.",
         },
         saas: {
           title: "Plataformas SaaS",
           description: "Productos escalables listos para miles de usuarios.",
-          detail: "Llevamos tu idea a una plataforma lista para operar, vender y crecer con una arquitectura sostenible.",
+          detail:
+            "Llevamos tu idea a una plataforma lista para operar, vender y crecer con una arquitectura sostenible.",
         },
         dashboards: {
           title: "Dashboards",
           description: "Paneles administrativos con datos en tiempo real.",
-          detail: "Convertimos información compleja en tableros claros para que tomes decisiones con velocidad y contexto.",
+          detail:
+            "Convertimos información compleja en tableros claros para que tomes decisiones con velocidad y contexto.",
         },
         marketing: {
           title: "Publicidad en redes",
           description: "Campañas que captan clientes y generan ROI.",
-          detail: "Conectamos estrategia, creatividad y datos para construir campañas que mueven tu negocio.",
+          detail:
+            "Conectamos estrategia, creatividad y datos para construir campañas que mueven tu negocio.",
         },
         automation: {
           title: "Automatizaciones",
           description: "Procesos digitales que ahorran tiempo y dinero.",
-          detail: "Eliminamos tareas repetitivas y conectamos tus herramientas para que tu equipo se enfoque en avanzar.",
+          detail:
+            "Eliminamos tareas repetitivas y conectamos tus herramientas para que tu equipo se enfoque en avanzar.",
         },
       },
     },
@@ -160,39 +170,88 @@ export const dictionary = {
       bannerParagraph:
         "Cada proyecto se construye con obsesión por el detalle, rendimiento extremo y resultados medibles para tu negocio.",
       items: [
-        { title: "Diseño premium", description: "Cada pieza combina claridad estratégica y elegancia intencional." },
-        { title: "Desarrollo escalable", description: "Arquitectura moderna preparada para crecer contigo." },
-        { title: "Orientación a conversión", description: "Experiencias que acercan visitantes a decisiones reales." },
-        { title: "Tecnología moderna", description: "Stack actual, sólido, seguro y mantenible." },
-        { title: "Acompañamiento", description: "Soporte profesional antes, durante y después del lanzamiento." },
+        {
+          title: "Diseño premium",
+          description:
+            "Cada pieza combina claridad estratégica y elegancia intencional.",
+        },
+        {
+          title: "Desarrollo escalable",
+          description: "Arquitectura moderna preparada para crecer contigo.",
+        },
+        {
+          title: "Orientación a conversión",
+          description:
+            "Experiencias que acercan visitantes a decisiones reales.",
+        },
+        {
+          title: "Tecnología moderna",
+          description: "Stack actual, sólido, seguro y mantenible.",
+        },
+        {
+          title: "Acompañamiento",
+          description:
+            "Soporte profesional antes, durante y después del lanzamiento.",
+        },
       ],
       ctaBadge: "¿Listo para empezar?",
-      ctaTitle: "Agenda una llamada y conversemos sobre lo que tu negocio necesita para escalar.",
-      ctaButton: "Hablar con un experto",
+      ctaTitle:
+        "Cuéntanos tu proyecto y te proponemos lo que tu negocio necesita para escalar.",
+      ctaButton: "Cotizar mi proyecto",
     },
     proceso: {
       badge: "Proceso",
       title1: "Del concepto al",
       titleHighlight: "crecimiento.",
-      paragraph: "Un proceso probado en 6 fases que garantiza resultados, claridad y cero sorpresas.",
-      bannerEyebrow: "Metodología probada",
-      bannerTitle: "Seis fases. Cero sorpresas. Resultados garantizados.",
-      bannerParagraph: "Una forma de trabajar transparente, ordenada y enfocada en avanzar con confianza.",
+      paragraph:
+        "Un proceso en 6 fases pensado para darte claridad en cada paso y cero sorpresas.",
+      bannerEyebrow: "Metodología clara",
+      bannerTitle: "Seis fases. Cero sorpresas. Avances que puedes ver.",
+      bannerParagraph:
+        "Una forma de trabajar transparente, ordenada y enfocada en avanzar con confianza.",
       phases: [
-        { title: "Descubrimiento", description: "Entendemos tu negocio, objetivos y usuarios a fondo." },
-        { title: "Estrategia", description: "Definimos el plan, alcance y métricas de éxito." },
-        { title: "Diseño UX/UI", description: "Creamos interfaces premium centradas en el usuario." },
-        { title: "Desarrollo", description: "Construimos con tecnología moderna y escalable." },
-        { title: "Lanzamiento", description: "Publicamos, testeamos y dejamos todo listo para crecer." },
-        { title: "Optimización", description: "Medimos, iteramos y mejoramos resultados continuamente." },
+        {
+          title: "Descubrimiento",
+          description: "Entendemos tu negocio, objetivos y usuarios a fondo.",
+        },
+        {
+          title: "Estrategia",
+          description: "Definimos el plan, alcance y métricas de éxito.",
+        },
+        {
+          title: "Diseño UX/UI",
+          description: "Creamos interfaces premium centradas en el usuario.",
+        },
+        {
+          title: "Desarrollo",
+          description: "Construimos con tecnología moderna y escalable.",
+        },
+        {
+          title: "Lanzamiento",
+          description:
+            "Publicamos, testeamos y dejamos todo listo para crecer.",
+        },
+        {
+          title: "Optimización",
+          description:
+            "Medimos, iteramos y mejoramos resultados continuamente.",
+        },
       ],
     },
     cotizador: {
-      steps: ["Tipo", "Objetivo", "Presupuesto", "Urgencia", "Detalles", "Resumen"],
+      steps: [
+        "Tipo",
+        "Objetivo",
+        "Presupuesto",
+        "Urgencia",
+        "Detalles",
+        "Resumen",
+      ],
       badge: "Cotizador inteligente",
       title1: "Cuéntanos sobre",
       titleHighlight: "tu proyecto.",
-      subtitle: "Un asistente guiado paso a paso. Solo te toma 2 minutos estructurar tu idea.",
+      subtitle:
+        "Un asistente guiado paso a paso. Solo te toma 2 minutos estructurar tu idea.",
       stepLabel: "Paso",
       of: "de 6",
       completed: "Completado",
@@ -215,7 +274,14 @@ export const dictionary = {
         "Analizar datos con dashboards",
         "Escalar mi negocio",
       ],
-      budgets: ["Menos de $500", "$500 - $1,500", "$1,500 - $3,000", "$3,000 - $7,000", "Más de $7,000", "No estoy seguro"],
+      budgets: [
+        "Menos de $500",
+        "$500 - $1,500",
+        "$1,500 - $3,000",
+        "$3,000 - $7,000",
+        "Más de $7,000",
+        "No estoy seguro",
+      ],
       urgencies: [
         "Lo necesito lo antes posible",
         "En 2 a 4 semanas",
@@ -223,7 +289,8 @@ export const dictionary = {
         "Estoy planificando para más adelante",
       ],
       q1Title: "¿Qué tipo de proyecto necesitas?",
-      q1Subtitle: "Selecciona la categoría principal para enfocar la solución tecnológica.",
+      q1Subtitle:
+        "Selecciona la categoría principal para enfocar la solución tecnológica.",
       q2Title: "¿Cuál es el objetivo principal?",
       q2Subtitle: "Queremos entender qué meta de negocio buscas alcanzar.",
       q3Title: "¿Cuál es tu rango de presupuesto?",
@@ -231,7 +298,8 @@ export const dictionary = {
       q4Title: "¿Cuál es tu nivel de urgencia?",
       q4Subtitle: "Indícanos los tiempos estimados para la ejecución.",
       contactTitle: "Detalles del contacto",
-      contactSubtitle: "Cuéntanos un poco más para prepararte una propuesta precisa a tu medida.",
+      contactSubtitle:
+        "Cuéntanos un poco más para prepararte una propuesta precisa a tu medida.",
       nameLabel: "Nombre completo *",
       namePlaceholder: "Ej. Carlos Mendoza",
       emailLabel: "Correo electrónico *",
@@ -241,11 +309,13 @@ export const dictionary = {
       companyLabel: "Empresa (Opcional)",
       companyPlaceholder: "Nombre de tu negocio",
       descriptionLabel: "Breve descripción del proyecto *",
-      descriptionPlaceholder: "Cuéntanos los detalles clave, funcionalidades o requerimientos especiales...",
+      descriptionPlaceholder:
+        "Cuéntanos los detalles clave, funcionalidades o requerimientos especiales...",
       referencesLabel: "Referencias o links de inspiración",
       referencesPlaceholder: "Ej. https://ejemplo.com (opcional)",
       summaryTitle: "Resumen de tu solicitud",
-      summarySubtitle: "Revisa que toda la información sea correcta antes de enviarnos el requerimiento.",
+      summarySubtitle:
+        "Revisa que toda la información sea correcta antes de enviarnos el requerimiento.",
       summaryType: "Tipo de proyecto",
       summaryObjective: "Objetivo principal",
       summaryBudget: "Presupuesto estimado",
@@ -260,7 +330,8 @@ export const dictionary = {
         "No pudimos enviar tu solicitud en este momento. Tus respuestas siguen aquí: vuelve a intentarlo o escríbenos a",
       errorEmail: "develoclick@gmail.com",
       successTitle: "¡Cotización enviada con éxito!",
-      successMessage: "Gracias {name}. Hemos recibido los requerimientos de tu proyecto. Nuestro equipo técnico analizará tu caso y te contactará en menos de 24 horas.",
+      successMessage:
+        "Gracias {name}. Hemos recibido los requerimientos de tu proyecto. Nuestro equipo técnico analizará tu caso y te contactará en menos de 24 horas.",
     },
     proyectoCta: {
       badge: "Inicia tu proyecto",
@@ -269,7 +340,7 @@ export const dictionary = {
       paragraph:
         "Cuéntanos qué estás imaginando y convirtámoslo en un producto digital de alto impacto que impulse tu negocio al siguiente nivel.",
       ctaPrimary: "Solicitar cotización",
-      ctaSecondary: "Agendar una llamada",
+      ctaSecondary: "Ver precios",
       trust: [
         "Cero plantillas, 100% a medida",
         "Respuesta en menos de 24h",
@@ -280,11 +351,18 @@ export const dictionary = {
       description:
         "La precisión del crecimiento. Diseñamos y desarrollamos experiencias digitales premium para negocios que buscan escalar.",
       servicesHeading: "Servicios",
-      services: ["Desarrollo Web", "Software a medida", "Plataformas SaaS", "Dashboards Empresariales", "Automatización"],
+      services: [
+        "Desarrollo Web",
+        "Software a medida",
+        "Plataformas SaaS",
+        "Dashboards Empresariales",
+        "Automatización",
+      ],
       companyHeading: "Empresa",
       company: ["Nosotros", "Servicios", "Precios", "Contacto"],
       contactHeading: "Contacto",
-      contactBlurb: "Trabajamos en remoto con empresas de habla hispana. El cotizador es la vía más rápida para llegar a nosotros.",
+      contactBlurb:
+        "Trabajamos en remoto con empresas de habla hispana. El cotizador es la vía más rápida para llegar a nosotros.",
       cta: "Solicitar proyecto",
       copyright: "© 2026 DeveloClick. Todos los derechos reservados.",
       privacy: "Privacidad",
@@ -294,23 +372,28 @@ export const dictionary = {
       badge: "Contacto",
       title1: "Hablemos de tu",
       titleHighlight: "proyecto",
-      subtitle: "Estamos a un mensaje de distancia. Cuéntanos tu idea y construyamos algo extraordinario juntos.",
+      subtitle:
+        "Estamos a un mensaje de distancia. Cuéntanos tu idea y construyamos algo extraordinario juntos.",
     },
     contactoSection: {
       title: "Cómo funciona el primer contacto",
-      paragraph: "Un solo canal, sin rodeos. Completas el cotizador, entendemos tu proyecto y te respondemos con una propuesta concreta.",
+      paragraph:
+        "Un solo canal, sin rodeos. Completas el cotizador, entendemos tu proyecto y te respondemos con una propuesta concreta.",
       steps: [
         {
           title: "Cuéntanos qué necesitas",
-          description: "Cuatro preguntas guiadas sobre tu proyecto, objetivo, presupuesto y plazos. Toma unos 2 minutos.",
+          description:
+            "Cuatro preguntas guiadas sobre tu proyecto, objetivo, presupuesto y plazos. Toma unos 2 minutos.",
         },
         {
           title: "Analizamos tu caso",
-          description: "Revisamos lo que nos enviaste y preparamos una propuesta con alcance, tiempos y costo estimado.",
+          description:
+            "Revisamos lo que nos enviaste y preparamos una propuesta con alcance, tiempos y costo estimado.",
         },
         {
           title: "Recibes una respuesta real",
-          description: "Te escribimos con una propuesta concreta, no con un correo automático genérico.",
+          description:
+            "Te escribimos con una propuesta concreta, no con un correo automático genérico.",
         },
       ],
       emailLabel: "¿Prefieres escribir directo?",
@@ -325,7 +408,8 @@ export const dictionary = {
       subtitle:
         "Somos un equipo multidisciplinario de diseñadores, desarrolladores y estrategas obsesionados con construir productos digitales que generan resultados medibles, no solo pantallas bonitas.",
       bannerEyebrow: "Nuestra historia",
-      bannerTitle: "Nacimos para eliminar la fricción entre las buenas ideas y su ejecución.",
+      bannerTitle:
+        "Nacimos para eliminar la fricción entre las buenas ideas y su ejecución.",
       bannerParagraph:
         "DeveloClick nace de una convicción simple: la mayoría de negocios no necesitan más tecnología, necesitan la tecnología correcta, bien ejecutada. Por eso combinamos estrategia de negocio, diseño centrado en conversión y desarrollo robusto en un solo equipo — sin intermediarios, sin plantillas genéricas.",
     },
@@ -333,10 +417,26 @@ export const dictionary = {
       eyebrow: "Cómo trabajamos",
       title: "Principios que guían cada proyecto.",
       valores: [
-        { title: "Claridad antes que velocidad", description: "Entendemos el objetivo de negocio antes de escribir una sola línea de código o diseñar una pantalla." },
-        { title: "Obsesión por el resultado", description: "Cada decisión de diseño y desarrollo se mide contra un objetivo: conversión, retención o eficiencia." },
-        { title: "Ingeniería responsable", description: "Código mantenible, seguro y documentado. Construimos para que tu producto crezca sin reescribirse." },
-        { title: "Socios, no proveedores", description: "Acompañamos el proyecto después del lanzamiento. Tu crecimiento es la métrica que nos importa." },
+        {
+          title: "Claridad antes que velocidad",
+          description:
+            "Entendemos el objetivo de negocio antes de escribir una sola línea de código o diseñar una pantalla.",
+        },
+        {
+          title: "Obsesión por el resultado",
+          description:
+            "Cada decisión de diseño y desarrollo se mide contra un objetivo: conversión, retención o eficiencia.",
+        },
+        {
+          title: "Ingeniería responsable",
+          description:
+            "Código mantenible, seguro y documentado. Construimos para que tu producto crezca sin reescribirse.",
+        },
+        {
+          title: "Socios, no proveedores",
+          description:
+            "Acompañamos el proyecto después del lanzamiento. Tu crecimiento es la métrica que nos importa.",
+        },
       ],
       stats: [
         { value: "24 h", label: "Respondemos tu solicitud" },
@@ -364,7 +464,8 @@ export const dictionary = {
         {
           name: "Starter",
           price: "$500 - $1,500",
-          description: "Ideal para landing pages y sitios de presencia que necesitan verse y convertir bien desde el día uno.",
+          description:
+            "Ideal para landing pages y sitios de presencia que necesitan verse y convertir bien desde el día uno.",
           features: [
             "Landing page o sitio de hasta 5 secciones",
             "Diseño UX/UI a medida",
@@ -376,7 +477,8 @@ export const dictionary = {
         {
           name: "Growth",
           price: "$1,500 - $3,000",
-          description: "Para negocios que necesitan un sitio completo con lógica de conversión, formularios y contenido dinámico.",
+          description:
+            "Para negocios que necesitan un sitio completo con lógica de conversión, formularios y contenido dinámico.",
           features: [
             "Todo lo incluido en Starter",
             "Sitio multi-página o dashboard simple",
@@ -388,7 +490,8 @@ export const dictionary = {
         {
           name: "Enterprise",
           price: "Desde $3,000",
-          description: "Software a medida, plataformas SaaS o dashboards con arquitectura escalable y funcionalidades complejas.",
+          description:
+            "Software a medida, plataformas SaaS o dashboards con arquitectura escalable y funcionalidades complejas.",
           features: [
             "Arquitectura de software a medida",
             "Plataformas SaaS multi-usuario",
@@ -405,19 +508,23 @@ export const dictionary = {
       items: [
         {
           question: "¿Los precios incluyen diseño y desarrollo?",
-          answer: "Sí. Cada plan incluye estrategia, diseño UX/UI y desarrollo completo. No trabajamos con plantillas prediseñadas: cada proyecto se construye a medida.",
+          answer:
+            "Sí. Cada plan incluye estrategia, diseño UX/UI y desarrollo completo. No trabajamos con plantillas prediseñadas: cada proyecto se construye a medida.",
         },
         {
           question: "¿Cuánto tiempo toma un proyecto?",
-          answer: "Depende del alcance. Una landing page suele tomar entre 1 y 2 semanas; un software a medida o plataforma SaaS puede tomar entre 4 y 10 semanas según la complejidad.",
+          answer:
+            "Depende del alcance. Una landing page suele tomar entre 1 y 2 semanas; un software a medida o plataforma SaaS puede tomar entre 4 y 10 semanas según la complejidad.",
         },
         {
           question: "¿Ofrecen soporte después del lanzamiento?",
-          answer: "Sí, los planes Growth y Enterprise incluyen acompañamiento post-lanzamiento. También ofrecemos mantenimiento continuo bajo un acuerdo mensual independiente.",
+          answer:
+            "Sí, los planes Growth y Enterprise incluyen acompañamiento post-lanzamiento. También ofrecemos mantenimiento continuo bajo un acuerdo mensual independiente.",
         },
         {
           question: "¿Qué pasa si mi proyecto no encaja en ningún plan?",
-          answer: "Usa el cotizador inteligente en la página principal: en 2 minutos entendemos tu alcance y te proponemos un presupuesto ajustado a tu caso específico.",
+          answer:
+            "Usa el cotizador inteligente de la página de contacto: en 2 minutos entendemos tu alcance y te proponemos un presupuesto ajustado a tu caso específico.",
         },
       ],
     },
@@ -434,72 +541,97 @@ export const dictionary = {
         {
           category: "Webs profesionales",
           title: "Sitios web que comunican valor y convierten.",
-          description: "Diseñamos y desarrollamos sitios rápidos, elegantes y optimizados para SEO y conversión, construidos sobre tecnología moderna y mantenible.",
-          features: ["Diseño UX/UI a medida", "Optimización Core Web Vitals", "SEO técnico incluido"],
+          description:
+            "Diseñamos y desarrollamos sitios rápidos, elegantes y optimizados para SEO y conversión, construidos sobre tecnología moderna y mantenible.",
+          features: [
+            "Diseño UX/UI a medida",
+            "Optimización Core Web Vitals",
+            "SEO técnico incluido",
+          ],
           imageAlt: "Diseño de interfaz web para DeveloClick",
         },
         {
           category: "Software a medida",
           title: "Soluciones tecnológicas diseñadas para tus procesos.",
-          description: "Construimos software robusto y modular que se adapta a la forma en que tu negocio ya trabaja, sin forzarte a cambiar tus procesos.",
-          features: ["Arquitectura escalable", "Integraciones con tus herramientas actuales", "Documentación técnica completa"],
+          description:
+            "Construimos software robusto y modular que se adapta a la forma en que tu negocio ya trabaja, sin forzarte a cambiar tus procesos.",
+          features: [
+            "Arquitectura escalable",
+            "Integraciones con tus herramientas actuales",
+            "Documentación técnica completa",
+          ],
           imageAlt: "Equipo definiendo arquitectura de software a medida",
         },
         {
           category: "Plataformas SaaS",
           title: "Productos digitales listos para escalar.",
-          description: "Llevamos tu idea a una plataforma multi-usuario lista para operar, vender y crecer, con una arquitectura pensada desde el día uno para escalar.",
-          features: ["Autenticación y roles de usuario", "Facturación y suscripciones", "Infraestructura cloud escalable"],
+          description:
+            "Llevamos tu idea a una plataforma multi-usuario lista para operar, vender y crecer, con una arquitectura pensada desde el día uno para escalar.",
+          features: [
+            "Autenticación y roles de usuario",
+            "Facturación y suscripciones",
+            "Infraestructura cloud escalable",
+          ],
           imageAlt: "Dashboard de plataforma SaaS",
         },
         {
           category: "Dashboards",
           title: "Paneles administrativos con datos en tiempo real.",
-          description: "Convertimos información compleja en tableros claros para que tomes decisiones con velocidad, contexto y confianza.",
-          features: ["Visualización de datos en tiempo real", "Roles y permisos por usuario", "Exportación de reportes"],
+          description:
+            "Convertimos información compleja en tableros claros para que tomes decisiones con velocidad, contexto y confianza.",
+          features: [
+            "Visualización de datos en tiempo real",
+            "Roles y permisos por usuario",
+            "Exportación de reportes",
+          ],
           imageAlt: "Programadores construyendo un dashboard empresarial",
         },
         {
           category: "Automatizaciones",
           title: "Procesos digitales que ahorran tiempo y dinero.",
-          description: "Eliminamos tareas repetitivas y conectamos tus herramientas para que tu equipo se enfoque en lo que realmente mueve al negocio.",
-          features: ["Flujos de trabajo automatizados", "Conexión entre plataformas", "Reducción de errores manuales"],
+          description:
+            "Eliminamos tareas repetitivas y conectamos tus herramientas para que tu equipo se enfoque en lo que realmente mueve al negocio.",
+          features: [
+            "Flujos de trabajo automatizados",
+            "Conexión entre plataformas",
+            "Reducción de errores manuales",
+          ],
           imageAlt: "Automatización de procesos empresariales",
         },
       ],
     },
     testimonios: {
-  eyebrow: "Nuestro compromiso",
+      eyebrow: "Nuestro compromiso",
 
-  title1: "Lo que puedes esperar",
+      title1: "Lo que puedes esperar",
 
-  titleHighlight: "al trabajar con nosotros.",
+      titleHighlight: "al trabajar con nosotros.",
 
-  paragraph:
-    "Cada proyecto representa una oportunidad para demostrar nuestro compromiso con la calidad, la innovación y la transparencia. Diseñamos soluciones digitales preparadas para impulsar el crecimiento de tu empresa.",
+      paragraph:
+        "Cada proyecto representa una oportunidad para demostrar nuestro compromiso con la calidad, la innovación y la transparencia. Diseñamos soluciones digitales preparadas para impulsar el crecimiento de tu empresa.",
 
-  items: [
-    {
-      title: "Desarrollo a medida",
-      description:
-        "Analizamos tu negocio antes de escribir una sola línea de código para construir una solución personalizada que responda a tus objetivos y necesidades.",
+      items: [
+        {
+          title: "Desarrollo a medida",
+          description:
+            "Analizamos tu negocio antes de escribir una sola línea de código para construir una solución personalizada que responda a tus objetivos y necesidades.",
+        },
+        {
+          title: "Comunicación transparente",
+          description:
+            "Mantendrás visibilidad del proyecto en cada etapa mediante una metodología clara, entregas organizadas y seguimiento constante.",
+        },
+        {
+          title: "Calidad para crecer",
+          description:
+            "Aplicamos buenas prácticas de arquitectura, experiencia de usuario y desarrollo para entregar software moderno, seguro y preparado para escalar.",
+        },
+      ],
+      cardTag: "Compromiso DeveloClick",
+      bottomTitle: "No solo desarrollamos software.",
+      bottomParagraph:
+        "Construimos herramientas digitales que ayudan a las empresas a vender más, optimizar procesos y crecer con tecnología moderna, escalable y diseñada para el futuro.",
     },
-    {
-      title: "Comunicación transparente",
-      description:
-        "Mantendrás visibilidad del proyecto en cada etapa mediante una metodología clara, entregas organizadas y seguimiento constante.",
-    },
-    {
-      title: "Calidad para crecer",
-      description:
-        "Aplicamos buenas prácticas de arquitectura, experiencia de usuario y desarrollo para entregar software moderno, seguro y preparado para escalar.",
-    },
-  ],
-  cardTag: "Compromiso DeveloClick",
-  bottomTitle: "No solo desarrollamos software.",
-  bottomParagraph:
-    "Construimos herramientas digitales que ayudan a las empresas a vender más, optimizar procesos y crecer con tecnología moderna, escalable y diseñada para el futuro.",
-},
     trustBar: {
       label: "Empresas que ya escalaron con nosotros",
     },
@@ -569,6 +701,7 @@ export const dictionary = {
     nav: {
       inicio: "Home",
       servicios: "Services",
+      proceso: "Process",
       nosotros: "About",
       precios: "Pricing",
       contacto: "Contact",
@@ -589,10 +722,10 @@ export const dictionary = {
         "Development tailored to your goals",
         "Absolute focus on conversion and ROI",
         "Zero technical headaches",
-        "Guaranteed support and scalability",
+        "Support and scalability by design",
       ],
-      ctaPrimary: "Book a strategy call",
-      ctaSecondary: "See results",
+      ctaPrimary: "Get my quote",
+      ctaSecondary: "See services",
       scrollHint: "Discover more",
       stats: [
         { value: "24 h", label: "We reply to your request" },
@@ -617,7 +750,8 @@ export const dictionary = {
         "From a landing page to a full SaaS platform. We cover every stage of your business's digital cycle.",
       cardEyebrow: "Our team",
       cardTitle: "Engineering and design, working as one.",
-      cardParagraph: "A multidisciplinary team focused on creating high-impact digital products.",
+      cardParagraph:
+        "A multidisciplinary team focused on creating high-impact digital products.",
       imageAlt: "Development team working on a digital solution",
     },
     carrusel: {
@@ -682,32 +816,39 @@ export const dictionary = {
         web: {
           title: "Professional websites",
           description: "Fast, elegant websites optimized for conversion.",
-          detail: "We design web experiences that communicate value, build trust, and turn visits into real opportunities.",
+          detail:
+            "We design web experiences that communicate value, build trust, and turn visits into real opportunities.",
         },
         software: {
           title: "Custom software",
-          description: "Technology solutions designed for your unique processes.",
-          detail: "We build robust, modular software that adapts to the way your business already works.",
+          description:
+            "Technology solutions designed for your unique processes.",
+          detail:
+            "We build robust, modular software that adapts to the way your business already works.",
         },
         saas: {
           title: "SaaS platforms",
           description: "Scalable products ready for thousands of users.",
-          detail: "We take your idea to a platform ready to operate, sell, and grow with a sustainable architecture.",
+          detail:
+            "We take your idea to a platform ready to operate, sell, and grow with a sustainable architecture.",
         },
         dashboards: {
           title: "Dashboards",
           description: "Admin panels with real-time data.",
-          detail: "We turn complex information into clear dashboards so you can make decisions with speed and context.",
+          detail:
+            "We turn complex information into clear dashboards so you can make decisions with speed and context.",
         },
         marketing: {
           title: "Social media advertising",
           description: "Campaigns that attract customers and generate ROI.",
-          detail: "We connect strategy, creativity, and data to build campaigns that move your business forward.",
+          detail:
+            "We connect strategy, creativity, and data to build campaigns that move your business forward.",
         },
         automation: {
           title: "Automations",
           description: "Digital processes that save time and money.",
-          detail: "We remove repetitive tasks and connect your tools so your team can focus on moving forward.",
+          detail:
+            "We remove repetitive tasks and connect your tools so your team can focus on moving forward.",
         },
       },
     },
@@ -724,31 +865,68 @@ export const dictionary = {
       bannerParagraph:
         "Every project is built with an obsession for detail, extreme performance, and measurable results for your business.",
       items: [
-        { title: "Premium design", description: "Every piece combines strategic clarity with intentional elegance." },
-        { title: "Scalable development", description: "Modern architecture ready to grow with you." },
-        { title: "Conversion-oriented", description: "Experiences that move visitors toward real decisions." },
-        { title: "Modern technology", description: "A current, solid, secure, and maintainable stack." },
-        { title: "Ongoing support", description: "Professional support before, during, and after launch." },
+        {
+          title: "Premium design",
+          description:
+            "Every piece combines strategic clarity with intentional elegance.",
+        },
+        {
+          title: "Scalable development",
+          description: "Modern architecture ready to grow with you.",
+        },
+        {
+          title: "Conversion-oriented",
+          description: "Experiences that move visitors toward real decisions.",
+        },
+        {
+          title: "Modern technology",
+          description: "A current, solid, secure, and maintainable stack.",
+        },
+        {
+          title: "Ongoing support",
+          description: "Professional support before, during, and after launch.",
+        },
       ],
       ctaBadge: "Ready to start?",
-      ctaTitle: "Book a call and let's talk about what your business needs to scale.",
-      ctaButton: "Talk to an expert",
+      ctaTitle:
+        "Tell us about your project and we'll propose what your business needs to scale.",
+      ctaButton: "Get my quote",
     },
     proceso: {
       badge: "Process",
       title1: "From concept to",
       titleHighlight: "growth.",
-      paragraph: "A proven 6-phase process that guarantees results, clarity, and zero surprises.",
-      bannerEyebrow: "Proven methodology",
-      bannerTitle: "Six phases. Zero surprises. Guaranteed results.",
-      bannerParagraph: "A transparent, organized way of working focused on moving forward with confidence.",
+      paragraph:
+        "A 6-phase process designed to give you clarity at every step and zero surprises.",
+      bannerEyebrow: "Clear methodology",
+      bannerTitle: "Six phases. Zero surprises. Progress you can see.",
+      bannerParagraph:
+        "A transparent, organized way of working focused on moving forward with confidence.",
       phases: [
-        { title: "Discovery", description: "We deeply understand your business, goals, and users." },
-        { title: "Strategy", description: "We define the plan, scope, and success metrics." },
-        { title: "UX/UI design", description: "We create premium, user-centered interfaces." },
-        { title: "Development", description: "We build with modern, scalable technology." },
-        { title: "Launch", description: "We publish, test, and set everything up to grow." },
-        { title: "Optimization", description: "We measure, iterate, and continuously improve results." },
+        {
+          title: "Discovery",
+          description: "We deeply understand your business, goals, and users.",
+        },
+        {
+          title: "Strategy",
+          description: "We define the plan, scope, and success metrics.",
+        },
+        {
+          title: "UX/UI design",
+          description: "We create premium, user-centered interfaces.",
+        },
+        {
+          title: "Development",
+          description: "We build with modern, scalable technology.",
+        },
+        {
+          title: "Launch",
+          description: "We publish, test, and set everything up to grow.",
+        },
+        {
+          title: "Optimization",
+          description: "We measure, iterate, and continuously improve results.",
+        },
       ],
     },
     cotizador: {
@@ -756,7 +934,8 @@ export const dictionary = {
       badge: "Smart quote builder",
       title1: "Tell us about",
       titleHighlight: "your project.",
-      subtitle: "A guided, step-by-step assistant. It only takes 2 minutes to structure your idea.",
+      subtitle:
+        "A guided, step-by-step assistant. It only takes 2 minutes to structure your idea.",
       stepLabel: "Step",
       of: "of 6",
       completed: "Completed",
@@ -779,7 +958,14 @@ export const dictionary = {
         "Analyze data with dashboards",
         "Scale my business",
       ],
-      budgets: ["Under $500", "$500 - $1,500", "$1,500 - $3,000", "$3,000 - $7,000", "Over $7,000", "Not sure"],
+      budgets: [
+        "Under $500",
+        "$500 - $1,500",
+        "$1,500 - $3,000",
+        "$3,000 - $7,000",
+        "Over $7,000",
+        "Not sure",
+      ],
       urgencies: [
         "I need it as soon as possible",
         "In 2 to 4 weeks",
@@ -787,7 +973,8 @@ export const dictionary = {
         "Planning for later",
       ],
       q1Title: "What type of project do you need?",
-      q1Subtitle: "Select the main category so we can focus the right solution.",
+      q1Subtitle:
+        "Select the main category so we can focus the right solution.",
       q2Title: "What is the main goal?",
       q2Subtitle: "We want to understand what business outcome you're after.",
       q3Title: "What's your budget range?",
@@ -795,7 +982,8 @@ export const dictionary = {
       q4Title: "What's your urgency level?",
       q4Subtitle: "Let us know your estimated timeline.",
       contactTitle: "Contact details",
-      contactSubtitle: "Tell us a bit more so we can prepare an accurate proposal for you.",
+      contactSubtitle:
+        "Tell us a bit more so we can prepare an accurate proposal for you.",
       nameLabel: "Full name *",
       namePlaceholder: "e.g. Carlos Mendoza",
       emailLabel: "Email *",
@@ -805,11 +993,13 @@ export const dictionary = {
       companyLabel: "Company (optional)",
       companyPlaceholder: "Your business name",
       descriptionLabel: "Brief project description *",
-      descriptionPlaceholder: "Tell us the key details, features, or special requirements...",
+      descriptionPlaceholder:
+        "Tell us the key details, features, or special requirements...",
       referencesLabel: "References or inspiration links",
       referencesPlaceholder: "e.g. https://example.com (optional)",
       summaryTitle: "Your request summary",
-      summarySubtitle: "Review that everything is correct before sending us your requirements.",
+      summarySubtitle:
+        "Review that everything is correct before sending us your requirements.",
       summaryType: "Project type",
       summaryObjective: "Main goal",
       summaryBudget: "Estimated budget",
@@ -824,7 +1014,8 @@ export const dictionary = {
         "We couldn't send your request right now. Your answers are still here: try again or write to us at",
       errorEmail: "develoclick@gmail.com",
       successTitle: "Quote request sent successfully!",
-      successMessage: "Thank you {name}. We've received your project requirements. Our technical team will review your case and contact you within 24 hours.",
+      successMessage:
+        "Thank you {name}. We've received your project requirements. Our technical team will review your case and contact you within 24 hours.",
     },
     proyectoCta: {
       badge: "Start your project",
@@ -833,7 +1024,7 @@ export const dictionary = {
       paragraph:
         "Tell us what you're imagining and let's turn it into a high-impact digital product that takes your business to the next level.",
       ctaPrimary: "Request a quote",
-      ctaSecondary: "Book a call",
+      ctaSecondary: "See pricing",
       trust: [
         "Zero templates, 100% custom",
         "Response within 24h",
@@ -844,11 +1035,18 @@ export const dictionary = {
       description:
         "Precision growth. We design and build premium digital experiences for businesses ready to scale.",
       servicesHeading: "Services",
-      services: ["Web Development", "Custom Software", "SaaS Platforms", "Business Dashboards", "Automation"],
+      services: [
+        "Web Development",
+        "Custom Software",
+        "SaaS Platforms",
+        "Business Dashboards",
+        "Automation",
+      ],
       companyHeading: "Company",
       company: ["About", "Services", "Pricing", "Contact"],
       contactHeading: "Contact",
-      contactBlurb: "We work remotely with companies across Spanish-speaking markets. The quote builder is the fastest way to reach us.",
+      contactBlurb:
+        "We work remotely with companies across Spanish-speaking markets. The quote builder is the fastest way to reach us.",
       cta: "Start a project",
       copyright: "© 2026 DeveloClick. All rights reserved.",
       privacy: "Privacy",
@@ -858,23 +1056,28 @@ export const dictionary = {
       badge: "Contact",
       title1: "Let's talk about your",
       titleHighlight: "project",
-      subtitle: "We're just one message away. Tell us your idea and let's build something extraordinary together.",
+      subtitle:
+        "We're just one message away. Tell us your idea and let's build something extraordinary together.",
     },
     contactoSection: {
       title: "How the first contact works",
-      paragraph: "One channel, no runaround. You fill out the quote builder, we understand your project, and we reply with a concrete proposal.",
+      paragraph:
+        "One channel, no runaround. You fill out the quote builder, we understand your project, and we reply with a concrete proposal.",
       steps: [
         {
           title: "Tell us what you need",
-          description: "Four guided questions about your project, goal, budget, and timeline. Takes about 2 minutes.",
+          description:
+            "Four guided questions about your project, goal, budget, and timeline. Takes about 2 minutes.",
         },
         {
           title: "We review your case",
-          description: "We go through what you sent and prepare a proposal with scope, timing, and estimated cost.",
+          description:
+            "We go through what you sent and prepare a proposal with scope, timing, and estimated cost.",
         },
         {
           title: "You get a real answer",
-          description: "We write back with a concrete proposal, not a generic automated email.",
+          description:
+            "We write back with a concrete proposal, not a generic automated email.",
         },
       ],
       emailLabel: "Prefer to write directly?",
@@ -889,7 +1092,8 @@ export const dictionary = {
       subtitle:
         "We're a multidisciplinary team of designers, developers, and strategists obsessed with building digital products that deliver measurable results, not just pretty screens.",
       bannerEyebrow: "Our story",
-      bannerTitle: "We exist to remove the friction between good ideas and their execution.",
+      bannerTitle:
+        "We exist to remove the friction between good ideas and their execution.",
       bannerParagraph:
         "DeveloClick was born from a simple conviction: most businesses don't need more technology, they need the right technology, well executed. That's why we combine business strategy, conversion-focused design, and robust development in one team — no middlemen, no generic templates.",
     },
@@ -897,10 +1101,26 @@ export const dictionary = {
       eyebrow: "How we work",
       title: "Principles that guide every project.",
       valores: [
-        { title: "Clarity before speed", description: "We understand the business goal before writing a single line of code or designing a screen." },
-        { title: "Obsessed with outcomes", description: "Every design and development decision is measured against a goal: conversion, retention, or efficiency." },
-        { title: "Responsible engineering", description: "Maintainable, secure, documented code. We build so your product can grow without a rewrite." },
-        { title: "Partners, not vendors", description: "We stay with the project after launch. Your growth is the metric that matters to us." },
+        {
+          title: "Clarity before speed",
+          description:
+            "We understand the business goal before writing a single line of code or designing a screen.",
+        },
+        {
+          title: "Obsessed with outcomes",
+          description:
+            "Every design and development decision is measured against a goal: conversion, retention, or efficiency.",
+        },
+        {
+          title: "Responsible engineering",
+          description:
+            "Maintainable, secure, documented code. We build so your product can grow without a rewrite.",
+        },
+        {
+          title: "Partners, not vendors",
+          description:
+            "We stay with the project after launch. Your growth is the metric that matters to us.",
+        },
       ],
       stats: [
         { value: "24 h", label: "We reply to your request" },
@@ -928,7 +1148,8 @@ export const dictionary = {
         {
           name: "Starter",
           price: "$500 - $1,500",
-          description: "Ideal for landing pages and presence sites that need to look and convert well from day one.",
+          description:
+            "Ideal for landing pages and presence sites that need to look and convert well from day one.",
           features: [
             "Landing page or site with up to 5 sections",
             "Custom UX/UI design",
@@ -940,7 +1161,8 @@ export const dictionary = {
         {
           name: "Growth",
           price: "$1,500 - $3,000",
-          description: "For businesses that need a complete site with conversion logic, forms, and dynamic content.",
+          description:
+            "For businesses that need a complete site with conversion logic, forms, and dynamic content.",
           features: [
             "Everything in Starter",
             "Multi-page site or simple dashboard",
@@ -952,7 +1174,8 @@ export const dictionary = {
         {
           name: "Enterprise",
           price: "From $3,000",
-          description: "Custom software, SaaS platforms, or dashboards with scalable architecture and complex features.",
+          description:
+            "Custom software, SaaS platforms, or dashboards with scalable architecture and complex features.",
           features: [
             "Custom software architecture",
             "Multi-user SaaS platforms",
@@ -969,19 +1192,23 @@ export const dictionary = {
       items: [
         {
           question: "Do the prices include design and development?",
-          answer: "Yes. Every plan includes strategy, UX/UI design, and full development. We don't work with pre-built templates: every project is custom-built.",
+          answer:
+            "Yes. Every plan includes strategy, UX/UI design, and full development. We don't work with pre-built templates: every project is custom-built.",
         },
         {
           question: "How long does a project take?",
-          answer: "It depends on scope. A landing page usually takes 1 to 2 weeks; custom software or a SaaS platform can take 4 to 10 weeks depending on complexity.",
+          answer:
+            "It depends on scope. A landing page usually takes 1 to 2 weeks; custom software or a SaaS platform can take 4 to 10 weeks depending on complexity.",
         },
         {
           question: "Do you offer support after launch?",
-          answer: "Yes, Growth and Enterprise plans include post-launch support. We also offer ongoing maintenance under a separate monthly agreement.",
+          answer:
+            "Yes, Growth and Enterprise plans include post-launch support. We also offer ongoing maintenance under a separate monthly agreement.",
         },
         {
           question: "What if my project doesn't fit any plan?",
-          answer: "Use the smart quote builder on the home page: in 2 minutes we understand your scope and propose a budget tailored to your specific case.",
+          answer:
+            "Use the smart quote builder on the contact page: in 2 minutes we understand your scope and propose a budget tailored to your specific case.",
         },
       ],
     },
@@ -998,36 +1225,61 @@ export const dictionary = {
         {
           category: "Professional websites",
           title: "Websites that communicate value and convert.",
-          description: "We design and build fast, elegant sites optimized for SEO and conversion, built on modern, maintainable technology.",
-          features: ["Custom UX/UI design", "Core Web Vitals optimization", "Technical SEO included"],
+          description:
+            "We design and build fast, elegant sites optimized for SEO and conversion, built on modern, maintainable technology.",
+          features: [
+            "Custom UX/UI design",
+            "Core Web Vitals optimization",
+            "Technical SEO included",
+          ],
           imageAlt: "Web interface design for DeveloClick",
         },
         {
           category: "Custom software",
           title: "Technology solutions designed for your processes.",
-          description: "We build robust, modular software that adapts to the way your business already works, without forcing you to change your processes.",
-          features: ["Scalable architecture", "Integrations with your current tools", "Complete technical documentation"],
+          description:
+            "We build robust, modular software that adapts to the way your business already works, without forcing you to change your processes.",
+          features: [
+            "Scalable architecture",
+            "Integrations with your current tools",
+            "Complete technical documentation",
+          ],
           imageAlt: "Team defining custom software architecture",
         },
         {
           category: "SaaS platforms",
           title: "Digital products ready to scale.",
-          description: "We take your idea to a multi-user platform ready to operate, sell, and grow, with an architecture designed to scale from day one.",
-          features: ["User authentication and roles", "Billing and subscriptions", "Scalable cloud infrastructure"],
+          description:
+            "We take your idea to a multi-user platform ready to operate, sell, and grow, with an architecture designed to scale from day one.",
+          features: [
+            "User authentication and roles",
+            "Billing and subscriptions",
+            "Scalable cloud infrastructure",
+          ],
           imageAlt: "SaaS platform dashboard",
         },
         {
           category: "Dashboards",
           title: "Admin panels with real-time data.",
-          description: "We turn complex information into clear dashboards so you can make decisions with speed, context, and confidence.",
-          features: ["Real-time data visualization", "User roles and permissions", "Report exporting"],
+          description:
+            "We turn complex information into clear dashboards so you can make decisions with speed, context, and confidence.",
+          features: [
+            "Real-time data visualization",
+            "User roles and permissions",
+            "Report exporting",
+          ],
           imageAlt: "Developers building a business dashboard",
         },
         {
           category: "Automations",
           title: "Digital processes that save time and money.",
-          description: "We remove repetitive tasks and connect your tools so your team can focus on what really moves the business.",
-          features: ["Automated workflows", "Cross-platform connections", "Fewer manual errors"],
+          description:
+            "We remove repetitive tasks and connect your tools so your team can focus on what really moves the business.",
+          features: [
+            "Automated workflows",
+            "Cross-platform connections",
+            "Fewer manual errors",
+          ],
           imageAlt: "Business process automation",
         },
       ],

@@ -2,84 +2,81 @@
 
 import Link from "next/link";
 import { Mail, ArrowRight } from "lucide-react";
+import Logo from "@/componentes/ui/Logo";
 import { useLanguage } from "@/componentes/i18n/LanguageProvider";
-
-const serviceHrefs = [
-  "/servicios",
-  "/servicios",
-  "/servicios",
-  "/servicios",
-  "/servicios",
-];
-const companyHrefs = ["/nosotros", "/servicios", "/precios", "/contacto"];
+import { usePage } from "@/componentes/i18n/usePage";
+import servicios from "@/componentes/i18n/pages/servicios";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const s = usePage(servicios);
+
+  const empresa = [
+    { href: "/proceso", label: t.nav.proceso },
+    { href: "/nosotros", label: t.nav.nosotros },
+    { href: "/precios", label: t.nav.precios },
+    { href: "/blog", label: t.nav.blog },
+    { href: "/contacto", label: t.nav.contacto },
+  ];
+
   return (
-    <footer className="relative overflow-hidden bg-[#07182d] text-white">
-      {/* glow background */}
-      <div className="absolute top-0 left-1/4 h-80 w-80 rounded-full bg-blue-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-red-500/10 blur-[120px]" />
+    <footer className="relative overflow-hidden bg-brand-ink text-white">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-brand-red-500/10 blur-[120px]"
+      />
 
       <div className="relative mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          {/* BRAND */}
           <div>
-            <Link href="/" className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red-600 font-display text-xl font-bold text-white">
-                D
-              </span>
-              <span className="text-xl font-bold tracking-tight">
-                DeveloClick
-              </span>
+            {/* Fondo navy fijo: siempre la versión clara del logo */}
+            <Link href="/" className="inline-block">
+              <Logo tone="light" className="w-52" />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
               {t.footer.description}
             </p>
           </div>
 
-          {/* SERVICES */}
           <div>
-            <h3 className="type-h3 text-slate-400">
-              {t.footer.servicesHeading.toUpperCase()}
+            <h3 className="type-eyebrow text-slate-400">
+              {t.footer.servicesHeading}
             </h3>
             <ul className="mt-6 space-y-4">
-              {t.footer.services.map((item, index) => (
-                <li key={item}>
+              {s.servicios.map((item) => (
+                <li key={item.id}>
                   <Link
-                    href={serviceHrefs[index]}
-                    className="text-sm text-slate-300 hover:text-white transition"
+                    href={`/servicios#${item.id}`}
+                    className="text-sm text-slate-300 transition hover:text-white"
                   >
-                    {item}
+                    {item.category}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* COMPANY */}
           <div>
-            <h3 className="type-h3 text-slate-400">
-              {t.footer.companyHeading.toUpperCase()}
+            <h3 className="type-eyebrow text-slate-400">
+              {t.footer.companyHeading}
             </h3>
             <ul className="mt-6 space-y-4">
-              {t.footer.company.map((item, index) => (
-                <li key={item}>
+              {empresa.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={companyHrefs[index]}
-                    className="text-sm text-slate-300 hover:text-white transition"
+                    href={item.href}
+                    className="text-sm text-slate-300 transition hover:text-white"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* CONTACT */}
           <div>
-            <h3 className="type-h3 text-slate-400">
-              {t.footer.contactHeading.toUpperCase()}
+            <h3 className="type-eyebrow text-slate-400">
+              {t.footer.contactHeading}
             </h3>
             <div className="mt-6 space-y-5 text-sm text-slate-300">
               <p className="leading-7 text-slate-400">
@@ -89,12 +86,12 @@ export default function Footer() {
                 href="mailto:develoclick@gmail.com"
                 className="flex gap-3 transition hover:text-white"
               >
-                <Mail size={18} className="shrink-0 text-brand-red-400" />{" "}
+                <Mail size={18} className="shrink-0 text-brand-red-400" />
                 develoclick@gmail.com
               </a>
               <Link
-                href="/#cotizador"
-                className="mt-5 inline-flex items-center gap-2 rounded-xl bg-brand-red-600 px-5 py-3 font-display text-sm font-bold text-white transition hover:bg-[#c1303b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-400"
+                href="/contacto#cotizador"
+                className="mt-5 inline-flex items-center gap-2 rounded-xl bg-brand-red-600 px-5 py-3 font-display text-sm font-bold text-white transition hover:bg-brand-red-700"
               >
                 {t.footer.cta} <ArrowRight size={16} />
               </Link>
@@ -102,12 +99,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-14 border-t border-white/10 pt-6 flex flex-col gap-4 text-xs text-slate-500 sm:flex-row sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:justify-between">
           <p>{t.footer.copyright}</p>
           <div className="flex gap-6">
-            <Link href="/privacidad">{t.footer.privacy}</Link>
-            <Link href="/terminos">{t.footer.terms}</Link>
+            <Link href="/privacidad" className="transition hover:text-white">
+              {t.footer.privacy}
+            </Link>
+            <Link href="/terminos" className="transition hover:text-white">
+              {t.footer.terms}
+            </Link>
           </div>
         </div>
       </div>

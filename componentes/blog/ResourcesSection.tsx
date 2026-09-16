@@ -57,7 +57,7 @@ export default function ResourcesSection() {
         <p className="type-eyebrow text-brand-red-600 dark:text-brand-red-400">
           Recursos gratuitos
         </p>
-        <h2 className="type-h2 mt-3 text-[#07182D] dark:text-white">
+        <h2 className="type-h2 mt-3 text-brand-navy dark:text-white">
           Herramientas listas para usar.
         </h2>
         <p className="mt-4 text-base leading-7 text-slate-500 dark:text-slate-400">
@@ -77,14 +77,14 @@ export default function ResourcesSection() {
             className="group relative flex flex-col rounded-3xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6 elev-1"
           >
             <div className="flex items-center justify-between">
-              <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-slate-50 dark:bg-white/5 text-[#07182D] dark:text-white">
+              <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-slate-50 dark:bg-white/5 text-brand-navy dark:text-white">
                 <resource.icon size={20} />
               </div>
               <span className="rounded-full bg-slate-50 dark:bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
                 {resource.type}
               </span>
             </div>
-            <h3 className="type-h3 mt-4 text-[#07182D] dark:text-white">
+            <h3 className="type-h3 mt-4 text-brand-navy dark:text-white">
               {resource.title}
             </h3>
             <p className="mt-1.5 flex-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
@@ -95,7 +95,7 @@ export default function ResourcesSection() {
               <Lock size={12} /> Próximamente
             </div>
 
-            <div className="absolute inset-0 rounded-3xl bg-white/40 dark:bg-[#07182d]/40 opacity-0 backdrop-blur-[1px] transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+            <div className="absolute inset-0 rounded-3xl bg-white/40 dark:bg-brand-ink/40 opacity-0 backdrop-blur-[1px] transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           </motion.div>
         ))}
       </div>

@@ -73,7 +73,7 @@ export default function BlogPage() {
       <Navbar />
       <BlogHero />
 
-      <div className="bg-white dark:bg-[#07182d] transition-colors duration-300">
+      <div className="bg-white dark:bg-brand-ink transition-colors duration-300">
         <div className="space-y-20 py-16 sm:space-y-24 sm:py-20">
           <FeaturedArticles posts={featured} />
 
