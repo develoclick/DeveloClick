@@ -59,14 +59,14 @@ export default function ProcesoPreview() {
         <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
           {/* Selector de fases */}
           <ol
-            className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
+            className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)]"
             onMouseEnter={() => setAuto(false)}
             onFocus={() => setAuto(false)}
           >
             {fases.map((fase, i) => {
               const on = i === activa;
               return (
-                <li key={fase.title}>
+                <li key={fase.title} className="min-w-0">
                   <button
                     type="button"
                     onClick={() => elegir(i)}

@@ -92,7 +92,14 @@ export default function PlanFinder() {
                     <button
                       key={op.label}
                       type="button"
-                      onClick={() => setRespuestas((r) => [...r, op.score])}
+                      // La respuesta queda atada a SU paso: mientras la pregunta
+                      // anterior hace su animación de salida sus botones siguen
+                      // en pantalla, y un doble clic saltaba una pregunta.
+                      onClick={() =>
+                        setRespuestas((r) =>
+                          r.length === paso ? [...r, op.score] : r,
+                        )
+                      }
                       className="group flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-left text-sm font-semibold text-slate-200 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-red-400/60 hover:bg-white/[0.08] hover:text-white sm:text-base"
                     >
                       {op.label}
@@ -103,7 +110,11 @@ export default function PlanFinder() {
                 {paso > 0 && (
                   <button
                     type="button"
-                    onClick={() => setRespuestas((r) => r.slice(0, -1))}
+                    onClick={() =>
+                      setRespuestas((r) =>
+                        r.length === paso ? r.slice(0, -1) : r,
+                      )
+                    }
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-400 transition hover:text-white"
                   >
                     <ArrowLeft size={15} /> {f.back}

@@ -105,7 +105,7 @@ export default function HeroDeveloclickBusiness() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative isolate w-full min-h-screen overflow-hidden bg-white dark:bg-brand-ink text-slate-900 pt-28 pb-20 transition-colors duration-300 lg:pt-36 font-sans"
+      className="relative isolate w-full min-h-screen overflow-hidden bg-white dark:bg-brand-ink text-slate-900 pt-28 pb-32 transition-colors lg:pb-52 duration-300 lg:pt-36 font-sans"
     >
       {/* Mouse-tracking spotlight */}
       <motion.div
@@ -135,7 +135,7 @@ export default function HeroDeveloclickBusiness() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-1/3 -right-24 h-[26rem] w-[26rem] rounded-full bg-brand-ink/10 dark:bg-cyan-400/10 blur-[110px]"
+          className="absolute top-1/3 -right-24 h-[26rem] w-[26rem] rounded-full bg-brand-navy/10 dark:bg-brand-navy-700/40 blur-[110px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{
             duration: 9,
@@ -265,7 +265,7 @@ export default function HeroDeveloclickBusiness() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-24 left-1/2 -translate-x-1/2 z-10 hidden flex-col items-center gap-1.5 lg:flex"
+        className="absolute bottom-40 left-1/2 -translate-x-1/2 z-10 hidden flex-col items-center gap-1.5 xl:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}

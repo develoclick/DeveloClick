@@ -11,11 +11,11 @@ const items = [
   },
   {
     icon: MessageSquareMore,
-    color: "from-brand-ink to-[#13375f]",
+    color: "from-brand-ink to-brand-navy-700",
   },
   {
     icon: Rocket,
-    color: "from-emerald-500 to-emerald-400",
+    color: "from-brand-red-600 to-brand-red-500",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function Compromiso() {
     <section className="relative overflow-hidden bg-white py-24 dark:bg-brand-ink lg:py-32">
       {/* Background */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-brand-red-500/5 blur-3xl" />
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl" />
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-brand-red-500/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Header */}

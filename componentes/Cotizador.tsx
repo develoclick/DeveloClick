@@ -62,7 +62,7 @@ export default function Cotizador() {
     >
       {/* Elementos de fondo decorativos */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-red-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-brand-navy-700/20 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Header del cotizador */}
       <div className="mx-auto max-w-3xl text-center px-6 relative z-10">

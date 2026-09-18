@@ -28,7 +28,7 @@ export default function BlogHero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-10 right-1/5 h-[22rem] w-[22rem] rounded-full bg-brand-ink/10 dark:bg-cyan-400/10 blur-[100px]"
+          className="absolute top-10 right-1/5 h-[22rem] w-[22rem] rounded-full bg-brand-ink/10 dark:bg-brand-navy-700/40 blur-[100px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{
             duration: 9,

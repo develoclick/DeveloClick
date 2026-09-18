@@ -49,7 +49,12 @@ export default function ParallaxImage({
   );
 
   return (
-    <div ref={ref} className={`relative overflow-hidden ${className}`}>
+    // Si el llamador lo posiciona en absoluto, no se fuerza `relative`: en
+    // Tailwind ganaría `relative` por orden de la hoja y rompería el layout.
+    <div
+      ref={ref}
+      className={`${className.split(" ").includes("absolute") ? "" : "relative"} overflow-hidden ${className}`}
+    >
       <motion.div
         className="rm-static absolute inset-0"
         style={{ y, scale: 1 + strength / 45 }}

@@ -65,9 +65,9 @@ export default function MarcaGaleria() {
     <section
       ref={ref}
       aria-label="Code, design & beyond"
-      className="relative h-[42rem] overflow-hidden bg-brand-ink sm:h-[48rem]"
+      className="relative h-[34rem] overflow-hidden bg-brand-ink sm:h-[40rem]"
     >
-      <div className="absolute inset-x-0 -top-24 mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 opacity-60 md:grid-cols-3">
+      <div className="absolute inset-x-0 -top-24 mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 opacity-90 md:grid-cols-3">
         <Columna items={columnas[0]} y={lenta} />
         <Columna items={columnas[1]} y={rapida} className="mt-24" />
         <Columna items={columnas[2]} y={lenta} className="hidden md:flex" />
@@ -75,7 +75,7 @@ export default function MarcaGaleria() {
 
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(10,21,38,0.55)_0%,rgba(10,21,38,0.92)_65%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(10,21,38,0.72)_0%,rgba(10,21,38,0.35)_70%)]"
       />
 
       <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
