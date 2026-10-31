@@ -13,10 +13,10 @@ import home from "@/componentes/i18n/pages/home";
 import servicios from "@/componentes/i18n/pages/servicios";
 
 /**
- * Posición de cada tarjeta en la cuadrícula bento de escritorio (3 columnas,
- * 3 filas = 9 celdas). Dos tarjetas altas y una ancha ocupan las 9 exactas.
+ * Cuadrícula uniforme de 3x2. Antes dos celdas eran del doble de alto, pero las
+ * fotos son panorámicas (1376x768) y al recortarlas en vertical se perdía el
+ * motivo. Con celdas del mismo alto cada foto se ve casi completa.
  */
-const bento = ["lg:row-span-2", "", "", "", "lg:row-span-2", "lg:col-span-2"];
 
 /** Resumen de servicios del home: cada tarjeta lleva a su sección en /servicios. */
 export default function ServiciosPreview() {
@@ -43,7 +43,7 @@ export default function ServiciosPreview() {
           </ButtonLink>
         </div>
 
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:auto-rows-[17rem] lg:grid-cols-3 lg:grid-flow-dense">
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:auto-rows-[15rem] lg:grid-cols-3">
           {s.servicios.map((item, i) => {
             const { icon: Icon, foto } = servicioMeta[item.id];
             return (
@@ -51,7 +51,7 @@ export default function ServiciosPreview() {
                 as="li"
                 key={item.id}
                 delay={i * 0.06}
-                className={`min-h-[17rem] ${bento[i]}`}
+                className="min-h-[15rem]"
               >
                 <Link
                   href={`/servicios#${item.id}`}

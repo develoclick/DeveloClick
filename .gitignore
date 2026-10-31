@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Originales sin comprimir de las fotos (37 MB). Las versiones optimizadas
+# viven en public/imagenes/*.jpg y son las que usa el sitio.
+/public/imagenes/nuevas/

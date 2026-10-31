@@ -1,41 +1,43 @@
 import type { StaticImageData } from "next/image";
 
-import equipoEstrategia from "@/public/imagenes/01_equipo_estrategia_digital.jpg";
-import desarrolloEquipo from "@/public/imagenes/02_desarrollo_software_equipo.jpg";
-import disenoUx from "@/public/imagenes/03_diseno_ux_ui.jpg";
-import programacion from "@/public/imagenes/04_programacion_codigo.jpg";
-import estrategiaCrecimiento from "@/public/imagenes/05_estrategia_crecimiento.jpg";
-import liderazgo from "@/public/imagenes/06_liderazgo_tecnologico.jpg";
-import conectividad from "@/public/imagenes/07_conectividad_global.jpg";
-import analitica from "@/public/imagenes/08_analitica_empresarial.jpg";
-import remoto from "@/public/imagenes/09_trabajo_remoto.jpg";
-import cloud from "@/public/imagenes/10_cloud_infraestructura.jpg";
-import webResponsive from "@/public/imagenes/11_desarrollo_web_responsive.jpg";
-import softwareMedida from "@/public/imagenes/12_software_a_medida.jpg";
-import saas from "@/public/imagenes/13_plataforma_saas.jpg";
-import dashboard from "@/public/imagenes/14_dashboard_datos.jpg";
-import publicidad from "@/public/imagenes/15_publicidad_y_analytics.jpg";
-import automatizaciones from "@/public/imagenes/16_automatizaciones.jpg";
-import ecommerce from "@/public/imagenes/17_ecommerce_tienda_online.jpg";
-import integraciones from "@/public/imagenes/18_integraciones_api.jpg";
-import ciberseguridad from "@/public/imagenes/19_ciberseguridad.jpg";
-import devops from "@/public/imagenes/20_devops_cloud.jpg";
-import descubrimiento from "@/public/imagenes/21_descubrimiento_equipo.jpg";
-import estrategiaProducto from "@/public/imagenes/22_estrategia_producto.jpg";
-import wireframes from "@/public/imagenes/23_wireframes_ux.jpg";
-import colaborativo from "@/public/imagenes/24_desarrollo_colaborativo.jpg";
-import lanzamiento from "@/public/imagenes/25_lanzamiento_producto.jpg";
-import optimizacion from "@/public/imagenes/26_optimizacion_metricas.jpg";
-import testingAb from "@/public/imagenes/27_testing_ab.jpg";
-import ia from "@/public/imagenes/28_inteligencia_artificial.jpg";
-import soporte from "@/public/imagenes/29_soporte_cliente.jpg";
-import crecimiento from "@/public/imagenes/30_crecimiento_digital.jpg";
+import analitica from "@/public/imagenes/analitica.jpg";
+import automatizaciones from "@/public/imagenes/automatizaciones.jpg";
+import ciberseguridad from "@/public/imagenes/ciberseguridad.jpg";
+import cloud from "@/public/imagenes/cloud.jpg";
+import colaborativo from "@/public/imagenes/colaborativo.jpg";
+import conectividad from "@/public/imagenes/conectividad.jpg";
+import crecimiento from "@/public/imagenes/crecimiento.jpg";
+import dashboard from "@/public/imagenes/dashboard.jpg";
+import desarrolloEquipo from "@/public/imagenes/desarrollo-equipo.jpg";
+import descubrimiento from "@/public/imagenes/descubrimiento.jpg";
+import devops from "@/public/imagenes/devops.jpg";
+import disenoUx from "@/public/imagenes/diseno-ux.jpg";
+import ecommerce from "@/public/imagenes/ecommerce.jpg";
+import equipoEstrategia from "@/public/imagenes/equipo-estrategia.jpg";
+import estrategiaCrecimiento from "@/public/imagenes/estrategia-crecimiento.jpg";
+import estrategiaProducto from "@/public/imagenes/estrategia-producto.jpg";
+import integraciones from "@/public/imagenes/integraciones.jpg";
+import lanzamiento from "@/public/imagenes/lanzamiento.jpg";
+import liderazgo from "@/public/imagenes/liderazgo.jpg";
+import optimizacion from "@/public/imagenes/optimizacion.jpg";
+import programacion from "@/public/imagenes/programacion.jpg";
+import publicidad from "@/public/imagenes/publicidad.jpg";
+import remoto from "@/public/imagenes/remoto.jpg";
+import saas from "@/public/imagenes/saas.jpg";
+import softwareMedida from "@/public/imagenes/software-medida.jpg";
+import soporte from "@/public/imagenes/soporte.jpg";
+import testingAb from "@/public/imagenes/testing-ab.jpg";
+import webResponsive from "@/public/imagenes/web-responsive.jpg";
+import wireframes from "@/public/imagenes/wireframes.jpg";
 
 /**
  * Registro único de fotografías del sitio.
  *
  * Imports estáticos: Next obtiene ancho, alto y `blurDataURL` en build, así que
  * no hay saltos de maquetación y cada foto muestra un difuminado mientras carga.
+ *
+ * Las panorámicas miden 1376x768 y las verticales 768x1376. Los componentes
+ * recortan con `object-cover`, por eso el motivo va centrado en cada toma.
  *
  * Los textos alternativos describen lo que se ve. No afirman que las personas
  * sean el equipo de DeveloClick ni clientes reales: son fotos ilustrativas.
@@ -51,155 +53,153 @@ const foto = (src: StaticImageData, es: string, en: string): Foto => ({
 });
 
 export const fotos = {
-  equipoEstrategia: foto(
-    equipoEstrategia,
-    "Equipo revisando una estrategia digital en una laptop",
-    "Team reviewing a digital strategy on a laptop",
-  ),
-  desarrolloEquipo: foto(
-    desarrolloEquipo,
-    "Desarrolladores revisando código en varias pantallas",
-    "Developers reviewing code across several screens",
-  ),
-  disenoUx: foto(
-    disenoUx,
-    "Diseñadora bocetando interfaces móviles junto a su monitor",
-    "Designer sketching mobile interfaces next to her monitor",
-  ),
-  programacion: foto(
-    programacion,
-    "Monitores con código fuente en un escritorio de desarrollo",
-    "Monitors showing source code on a development desk",
-  ),
-  estrategiaCrecimiento: foto(
-    estrategiaCrecimiento,
-    "Sesión de estrategia frente a una pizarra con gráficos de crecimiento",
-    "Strategy session in front of a whiteboard with growth charts",
-  ),
-  liderazgo: foto(
-    liderazgo,
-    "Profesional de tecnología en una oficina moderna",
-    "Technology professional in a modern office",
-  ),
-  conectividad: foto(
-    conectividad,
-    "Mapa digital con conexiones de red entre continentes",
-    "Digital map with network connections between continents",
-  ),
+  // ---- Panorámicas (1376x768) ----
   analitica: foto(
     analitica,
-    "Equipo analizando métricas de negocio en un dashboard",
-    "Team analysing business metrics on a dashboard",
-  ),
-  remoto: foto(
-    remoto,
-    "Videollamada de trabajo con cuatro participantes",
-    "Work video call with four participants",
-  ),
-  cloud: foto(
-    cloud,
-    "Centro de datos con icono de sincronización en la nube",
-    "Data centre with a cloud sync icon",
-  ),
-  webResponsive: foto(
-    webResponsive,
-    "Sitio web adaptado a laptop y teléfono móvil",
-    "Website adapted to a laptop and a mobile phone",
-  ),
-  softwareMedida: foto(
-    softwareMedida,
-    "Desarrollador trabajando en una aplicación a medida",
-    "Developer working on a custom application",
-  ),
-  saas: foto(
-    saas,
-    "Panel de una plataforma SaaS con usuarios y gráficos",
-    "SaaS platform panel with users and charts",
-  ),
-  dashboard: foto(
-    dashboard,
-    "Dashboard de datos con mapas y gráficos en tiempo real",
-    "Data dashboard with maps and real-time charts",
-  ),
-  publicidad: foto(
-    publicidad,
-    "Equipo revisando resultados de campañas publicitarias",
-    "Team reviewing advertising campaign results",
+    "Dos profesionales señalando un gráfico en una pantalla grande",
+    "Two professionals pointing at a chart on a large screen",
   ),
   automatizaciones: foto(
     automatizaciones,
-    "Diagrama de un flujo automatizado entre aplicaciones",
-    "Diagram of an automated flow between applications",
-  ),
-  ecommerce: foto(
-    ecommerce,
-    "Tienda online abierta en una laptop",
-    "Online store open on a laptop",
-  ),
-  integraciones: foto(
-    integraciones,
-    "Esquema de integraciones entre sistemas mediante API",
-    "Diagram of system integrations through APIs",
+    "Diagrama luminoso de un flujo automatizado con un engranaje rojo en el centro",
+    "Glowing diagram of an automated flow with a red gear at its centre",
   ),
   ciberseguridad: foto(
     ciberseguridad,
-    "Escudo con candado sobre servidores, símbolo de seguridad",
-    "Shield with a padlock over servers, a security symbol",
+    "Escudo luminoso con un candado delante de racks de servidores",
+    "Glowing shield with a padlock in front of server racks",
   ),
-  devops: foto(
-    devops,
-    "Servidores conectados a la nube",
-    "Servers connected to the cloud",
+  cloud: foto(
+    cloud,
+    "Nube luminosa sobre racks de servidores en un centro de datos",
+    "Glowing cloud above server racks in a data centre",
   ),
-  descubrimiento: foto(
-    descubrimiento,
-    "Equipo en una sesión de descubrimiento alrededor de una laptop",
-    "Team in a discovery session around a laptop",
-  ),
-  estrategiaProducto: foto(
-    estrategiaProducto,
-    "Profesional planificando la estrategia de un producto",
-    "Professional planning a product strategy",
-  ),
-  wireframes: foto(
-    wireframes,
-    "Wireframes de una aplicación móvil en pantalla",
-    "Wireframes of a mobile application on screen",
-  ),
-  colaborativo: foto(
-    colaborativo,
-    "Dos desarrolladores revisando código juntos",
-    "Two developers reviewing code together",
-  ),
-  lanzamiento: foto(
-    lanzamiento,
-    "Equipo celebrando el lanzamiento de un producto",
-    "Team celebrating a product launch",
-  ),
-  optimizacion: foto(
-    optimizacion,
-    "Analista revisando métricas de rendimiento",
-    "Analyst reviewing performance metrics",
-  ),
-  testingAb: foto(
-    testingAb,
-    "Comparación de dos variantes de una página en una prueba A/B",
-    "Comparison of two page variants in an A/B test",
-  ),
-  ia: foto(
-    ia,
-    "Mano robótica con un chip de inteligencia artificial",
-    "Robotic hand with an artificial intelligence chip",
-  ),
-  soporte: foto(
-    soporte,
-    "Profesional de soporte atendiendo con auriculares",
-    "Support professional assisting with a headset",
+  conectividad: foto(
+    conectividad,
+    "Globo terráqueo oscuro con arcos de conexión rojos entre continentes",
+    "Dark globe with red connection arcs between continents",
   ),
   crecimiento: foto(
     crecimiento,
-    "Persona frente a una ciudad con una línea de crecimiento luminosa",
-    "Person facing a city with a glowing growth line",
+    "Persona mirando una ciudad al anochecer con una estela de luz roja",
+    "Person looking out over a city at dusk with a red light trail",
+  ),
+  dashboard: foto(
+    dashboard,
+    "Monitor con un panel de métricas y un mapa de datos",
+    "Monitor showing a metrics dashboard and a data map",
+  ),
+  desarrolloEquipo: foto(
+    desarrolloEquipo,
+    "Fila de personas trabajando frente a monitores en una oficina",
+    "Row of people working at monitors in an office",
+  ),
+  devops: foto(
+    devops,
+    "Racks de servidores conectados a una nube por flujos de luz",
+    "Server racks connected to a cloud by streams of light",
+  ),
+  disenoUx: foto(
+    disenoUx,
+    "Diseñadora bocetando pantallas en papel junto a un monitor",
+    "Designer sketching screens on paper beside a monitor",
+  ),
+  ecommerce: foto(
+    ecommerce,
+    "Manos sosteniendo un teléfono sobre una laptop con una tienda online",
+    "Hands holding a phone above a laptop showing an online store",
+  ),
+  integraciones: foto(
+    integraciones,
+    "Red de nodos luminosos conectados sobre una superficie oscura",
+    "Network of glowing nodes connected across a dark surface",
+  ),
+  liderazgo: foto(
+    liderazgo,
+    "Profesional de pie en una oficina acristalada con la ciudad detrás",
+    "Professional standing in a glass-walled office with the city behind",
+  ),
+  publicidad: foto(
+    publicidad,
+    "Equipo revisando métricas de campañas en un monitor",
+    "Team reviewing campaign metrics on a monitor",
+  ),
+  remoto: foto(
+    remoto,
+    "Videollamada de trabajo en una laptop con varios participantes",
+    "Work video call on a laptop with several participants",
+  ),
+  saas: foto(
+    saas,
+    "Monitor con la interfaz de una plataforma multiusuario",
+    "Monitor showing a multi-user platform interface",
+  ),
+  softwareMedida: foto(
+    softwareMedida,
+    "Persona programando frente a un monitor con código",
+    "Person coding at a monitor filled with code",
+  ),
+  soporte: foto(
+    soporte,
+    "Especialista de soporte con auriculares atendiendo en una laptop",
+    "Support specialist with a headset assisting on a laptop",
+  ),
+  testingAb: foto(
+    testingAb,
+    "Dos personas comparando dos versiones de una página en pantalla",
+    "Two people comparing two versions of a page on screen",
+  ),
+  webResponsive: foto(
+    webResponsive,
+    "Laptop y teléfono mostrando el mismo sitio web adaptado",
+    "Laptop and phone showing the same responsive website",
+  ),
+
+  // ---- Verticales (768x1376) ----
+  colaborativo: foto(
+    colaborativo,
+    "Dos personas revisando código juntas en el mismo monitor",
+    "Two people reviewing code together on the same monitor",
+  ),
+  descubrimiento: foto(
+    descubrimiento,
+    "Equipo reunido alrededor de una laptop tomando notas",
+    "Team gathered around a laptop taking notes",
+  ),
+  equipoEstrategia: foto(
+    equipoEstrategia,
+    "Equipo trabajando junto a una laptop en una sala de reuniones",
+    "Team working around a laptop in a meeting room",
+  ),
+  estrategiaCrecimiento: foto(
+    estrategiaCrecimiento,
+    "Persona dibujando una curva de crecimiento en una pizarra ante su equipo",
+    "Person drawing a growth curve on a whiteboard in front of their team",
+  ),
+  estrategiaProducto: foto(
+    estrategiaProducto,
+    "Profesional trazando un plan en una pizarra durante una sesión de estrategia",
+    "Professional mapping out a plan on a whiteboard during a strategy session",
+  ),
+  lanzamiento: foto(
+    lanzamiento,
+    "Equipo celebrando con las manos en alto frente a una pantalla",
+    "Team celebrating with raised hands in front of a screen",
+  ),
+  optimizacion: foto(
+    optimizacion,
+    "Analista revisando gráficos de rendimiento en un monitor",
+    "Analyst reviewing performance charts on a monitor",
+  ),
+  programacion: foto(
+    programacion,
+    "Escritorio con dos monitores mostrando código",
+    "Desk with two monitors showing code",
+  ),
+  wireframes: foto(
+    wireframes,
+    "Persona señalando wireframes de una aplicación en una pantalla vertical",
+    "Person pointing at app wireframes on a vertical screen",
   ),
 } satisfies Record<string, Foto>;
 

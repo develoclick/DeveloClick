@@ -26,7 +26,7 @@ export default function Footer() {
         className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-brand-red-500/10 blur-[120px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-16">
+      <div className="relative mx-auto max-w-7xl px-6 pb-36 pt-16 xl:pb-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             {/* Fondo navy fijo: siempre la versión clara del logo */}

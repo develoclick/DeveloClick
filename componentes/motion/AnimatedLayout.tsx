@@ -4,6 +4,7 @@ import { MotionConfig } from "framer-motion";
 import PageLoader from "@/componentes/motion/PageLoader";
 import RouteProgress from "@/componentes/motion/RouteProgress";
 import PageTransition from "@/componentes/motion/PageTransition";
+import CtaMovil from "@/componentes/ui/CtaMovil";
 
 /**
  * Punto único de montaje del sistema de movimiento.
@@ -26,6 +27,7 @@ export default function AnimatedLayout({
       <RouteProgress />
       <PageLoader />
       <PageTransition>{children}</PageTransition>
+      <CtaMovil />
     </MotionConfig>
   );
 }

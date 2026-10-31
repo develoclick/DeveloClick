@@ -13,7 +13,7 @@ export const SITE_EMAIL = "develoclick@gmail.com";
 
 /** Imagen Open Graph — 1200x630 real, generada en /public/og-image.png */
 export const OG_IMAGE = {
-  url: "/og-image.png",
+  url: "/og-image.jpg",
   width: 1200,
   height: 630,
   alt: "DeveloClick — Soluciones digitales para hacer crecer tu negocio",

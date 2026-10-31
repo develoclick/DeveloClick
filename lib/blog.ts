@@ -35,7 +35,7 @@ function fileToPost(filename: string): BlogPost {
     title: data.title ?? "",
     description: data.description ?? "",
     excerpt: data.excerpt ?? data.description ?? "",
-    cover: data.cover ?? "/imagenes/01_equipo_estrategia_digital.jpg",
+    cover: data.cover ?? "/imagenes/desarrollo-equipo.jpg",
     coverAlt: data.coverAlt ?? data.title ?? "",
     date: data.date ?? "",
     author: data.author ?? "Equipo DeveloClick",
